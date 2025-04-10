@@ -1,1 +1,64 @@
-/* Final CSS with dark mode, luxury styling, and animations */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+header {
+  background: #6b5b95;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  height: 50px;
+}
+nav a {
+  margin: 0 1em;
+  color: white;
+  text-decoration: none;
+}
+.hero {
+  background: url('images/hero-background.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 5em 2em;
+}
+.cta-button {
+  padding: 1em 2em;
+  background: #ffae00;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  display: inline-block;
+  margin-top: 1em;
+}
+.products {
+  text-align: center;
+  padding: 3em 1em;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+.product-card {
+  background: #f7f7f7;
+  padding: 1em;
+  border-radius: 12px;
+  width: 200px;
+}
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+footer {
+  text-align: center;
+  background: #444;
+  color: white;
+  padding: 2em;
+}
