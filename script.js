@@ -1,0 +1,1 @@
+// Final JavaScript for theme and audio toggle functionality
