@@ -1,1 +1,1 @@
-// working JS for theme/audio toggle
+// Final verified JS file for dark mode and audio
