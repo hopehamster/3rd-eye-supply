@@ -1,1 +1,1 @@
-// working JS for theme toggle
+// JS for theme toggle
