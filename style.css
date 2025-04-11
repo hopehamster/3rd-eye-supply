@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #f0f0f0;
+  color: #333;
+}
+header {
+  background: #6b5b95;
+  color: white;
+  padding: 2em 1em;
+}
+.logo {
+  max-width: 120px;
+  display: block;
+  margin: 0 auto 1em;
+}
+main {
+  padding: 2em;
+}
+.featured-product {
+  width: 200px;
+  margin: 1em auto;
+  display: block;
+}
+.shop-button {
+  background: #ff9800;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  border-radius: 25px;
+  display: inline-block;
+}
+footer {
+  margin-top: 3em;
+  background: #333;
+  color: white;
+  padding: 1em;
+}
