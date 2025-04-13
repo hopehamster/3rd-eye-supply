@@ -1,45 +1,142 @@
+<!-- index.html - Homepage -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3rd Eye Supply</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3rd Eye Supply | Spiritual Gifts & Tools</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
   <header>
-    <img src="images/logo.jpg" alt="3rd Eye Supply Logo" class="logo" />
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="assets/images/logo.png" alt="3rd Eye Supply">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/products/buddhas.html">Buddhas</a>
+          <a class="navbar-item" href="/products/pyramids.html">Pyramids</a>
+          <a class="navbar-item" href="/products/angels.html">Angels</a>
+          <a class="navbar-item" href="/products/starfish.html">Starfish</a>
+          <a class="navbar-item" href="/about.html">Our Mission</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a href="#" class="button is-primary" id="cart-button">
+              <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+              <span>Cart (<span id="cart-count">0</span>)</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Where Ancient Wisdom Meets Modern Healing</h1>
-    <p>Explore handcrafted orgonite, crystals, and sacred tools.</p>
-    <a href="#" class="cta-button">Enter the Shop</a>
-  </section>
-
-  <section class="categories">
-    <h2>Explore Our Categories</h2>
-    <div class="grid">
-      <div class="card"><img src="images/buddha.jpg" alt="Buddhas"><h3>Buddhas</h3><a href="#" class="shop-link">Shop Buddhas</a></div>
-      <div class="card"><img src="images/pyramid.jpg" alt="Pyramids"><h3>Pyramids</h3><a href="#" class="shop-link">Shop Pyramids</a></div>
-      <div class="card"><img src="images/angel.jpg" alt="Angels"><h3>Angels</h3><a href="#" class="shop-link">Shop Angels</a></div>
-      <div class="card"><img src="images/starfish.jpg" alt="Starfish"><h3>Starfish</h3><a href="#" class="shop-link">Shop Starfish</a></div>
+  <section class="hero is-medium is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1 has-text-centered">Where Ancient Wisdom Meets Modern Healing</h1>
+        <h2 class="subtitle has-text-centered">Explore handcrafted orgonite, crystals, and sacred tools.</h2>
+        <div class="buttons is-centered">
+          <a href="/products/" class="button is-light is-large">Enter the Shop</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="mission">
-    <h2>Our Mission</h2>
-    <p>3rd Eye Supply is a metaphysical boutique offering spiritually inspired products, cultural authenticity, and energy-aligned artistry to support your inner journey.</p>
+  <section class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Explore Our Categories</h2>
+      <div class="columns is-multiline">
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="assets/images/buddha.jpg" alt="Buddha">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4 has-text-centered">Buddhas</p>
+              <div class="buttons is-centered">
+                <a href="/products/buddhas.html" class="button is-primary">Shop Buddhas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="assets/images/pyramid.jpg" alt="Pyramid">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4 has-text-centered">Pyramids</p>
+              <div class="buttons is-centered">
+                <a href="/products/pyramids.html" class="button is-primary">Shop Pyramids</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="assets/images/angel.jpg" alt="Angel">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4 has-text-centered">Angels</p>
+              <div class="buttons is-centered">
+                <a href="/products/angels.html" class="button is-primary">Shop Angels</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="assets/images/starfish.jpg" alt="Starfish">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4 has-text-centered">Starfish</p>
+              <div class="buttons is-centered">
+                <a href="/products/starfish.html" class="button is-primary">Shop Starfish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 3rd Eye Supply | 3rdEyeSupply@gmail.com</p>
+  <section class="section has-background-light">
+    <div class="container">
+      <h2 class="title has-text-centered">Our Mission</h2>
+      <p class="subtitle has-text-centered">3rd Eye Supply is a metaphysical boutique offering spiritually inspired products, cultural authenticity, and energy-aligned artistry to support your inner journey.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>© 2025 3rd Eye Supply | <a href="mailto:3rdEyeSupply@gmail.com">3rdEyeSupply@gmail.com</a></p>
+    </div>
   </footer>
+
+  <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Foxy.io Cart Integration -->
+  <script src="https://cdn.foxycart.com/your-store/loader.js" async defer></script>
 </body>
 </html>
