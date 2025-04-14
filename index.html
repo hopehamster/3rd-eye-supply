@@ -373,12 +373,12 @@
                     <a href="#about" class="nav-link text-white hover:text-purple-300 transition duration-300">About</a>
                     <a href="#benefits" class="nav-link text-white hover:text-purple-300 transition duration-300">Benefits</a>
                     <a href="#products" class="nav-link text-white hover:text-purple-300 transition duration-300">Shop</a>
-                    <a href="#" class="flex items-center text-white hover:text-purple-300 transition duration-300">
+                    <a href="#" class="flex items-center text-white hover:text-purple-300 transition duration-300" id="nav-cart-icon">
                         <i class="fas fa-shopping-cart mr-2"></i>
                         <span id="cart-count">0</span>
                     </a>
                 </div>
-                <button class="md:hidden focus:outline-none">
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
                     <i class="fas fa-bars text-white text-xl"></i>
                 </button>
             </div>
@@ -397,9 +397,9 @@
             <a href="#about" class="text-xl text-white hover:text-purple-300 transition duration-300">About</a>
             <a href="#benefits" class="text-xl text-white hover:text-purple-300 transition duration-300">Benefits</a>
             <a href="#products" class="text-xl text-white hover:text-purple-300 transition duration-300">Shop</a>
-            <a href="#" class="flex items-center text-xl text-white hover:text-purple-300 transition duration-300">
+            <a href="#" class="flex items-center text-xl text-white hover:text-purple-300 transition duration-300" id="mobile-cart-icon">
                 <i class="fas fa-shopping-cart mr-2"></i>
-                <span>Cart (0)</span>
+                <span>Cart (<span id="mobile-cart-count">0</span>)</span>
             </a>
         </div>
     </div>
@@ -432,7 +432,7 @@
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative crystal-animation">
                         <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full opacity-30 blur-xl animate-pulse"></div>
-                        <img src="https://images.unsplash.com/photo-1615486511289-92b91f59bce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3J5c3RhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Crystal Energy" class="rounded-full w-64 h-64 object-cover z-10 relative border-4 border-white border-opacity-20">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/hero-crystal.jpg" alt="Crystal Energy" class="rounded-full w-64 h-64 object-cover z-10 relative border-4 border-white border-opacity-20">
                     </div>
                 </div>
             </div>
@@ -466,7 +466,7 @@
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <div class="relative">
                         <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-lg opacity-20 blur-xl"></div>
-                        <img src="https://images.unsplash.com/photo-1616011462033-4a9c1bfaa0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNyeXN0YWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Our Journey" class="rounded-lg w-full h-auto relative z-10">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/about-journey.jpg" alt="Our Journey" class="rounded-lg w-full h-auto relative z-10">
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-10">
@@ -606,130 +606,130 @@
             
             <!-- Product Categories Tabs -->
             <div class="flex flex-wrap justify-center mb-10 space-x-2 md:space-x-6">
-                <button class="product-category-tab py-2 px-4 text-white rounded-full bg-purple-900 bg-opacity-30 active">All Categories</button>
-                <button class="product-category-tab py-2 px-4 text-white rounded-full">Buddha Orgonite</button>
-                <button class="product-category-tab py-2 px-4 text-white rounded-full">Orgonite Pyramids</button>
-                <button class="product-category-tab py-2 px-4 text-white rounded-full">Angel Sculptures</button>
-                <button class="product-category-tab py-2 px-4 text-white rounded-full">Starfish Orgonite</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full bg-purple-900 bg-opacity-30 active" data-category="all">All Categories</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full" data-category="buddha">Buddha Orgonite</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full" data-category="pyramid">Orgonite Pyramids</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full" data-category="angel">Angel Sculptures</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full" data-category="starfish">Starfish Orgonite</button>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
                 <!-- Buddha Orgonite -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="buddha">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1631281351123-2b115d21fc56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVkZGhhJTIwc3RhdHVlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Buddha Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/buddha-orgonite.jpg" alt="Buddha Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Buddha Orgonite</h3>
                         <p class="text-gray-400 mb-4">Amber Resin with Copper Spiral</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$33.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="1" data-name="Buddha Orgonite" data-price="33.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="1" data-name="Buddha Orgonite" data-price="33.00" data-image="buddha-orgonite.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Orgonite Pyramid -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="pyramid">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1603008857241-12659649d723?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHlyYW1pZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Orgonite Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/orgonite-pyramid.jpg" alt="Orgonite Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Orgonite Pyramid</h3>
                         <p class="text-gray-400 mb-4">Multi-Crystal with Gold Flakes</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$29.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="2" data-name="Orgonite Pyramid" data-price="29.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="2" data-name="Orgonite Pyramid" data-price="29.00" data-image="orgonite-pyramid.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Angel Sculpture -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="angel">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1604177052603-c2b4cff228db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YW5nZWwlMjBzdGF0dWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Angel Sculpture" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/angel-sculpture.jpg" alt="Angel Sculpture" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Angel Sculpture</h3>
                         <p class="text-gray-400 mb-4">Clear Resin with Healing Crystals</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$27.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="3" data-name="Angel Sculpture" data-price="27.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="3" data-name="Angel Sculpture" data-price="27.00" data-image="angel-sculpture.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Starfish Orgonite -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="starfish">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcmZpc2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Starfish Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/starfish-orgonite.jpg" alt="Starfish Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Starfish Orgonite</h3>
                         <p class="text-gray-400 mb-4">Sea Shell and Mixed Gemstones</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$25.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="4" data-name="Starfish Orgonite" data-price="25.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="4" data-name="Starfish Orgonite" data-price="25.00" data-image="starfish-orgonite.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Blue Turquoise Angel -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="angel">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1617791169255-0fae156583a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3J5c3RhbCUyMGFuZ2VsfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Blue Turquoise Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/blue-turquoise-angel.jpg" alt="Blue Turquoise Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Blue Turquoise Angel</h3>
                         <p class="text-gray-400 mb-4">Throat Chakra Healing</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$28.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="5" data-name="Blue Turquoise Angel" data-price="28.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="5" data-name="Blue Turquoise Angel" data-price="28.00" data-image="blue-turquoise-angel.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 7 Chakra Pyramid -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="pyramid">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3J5c3RhbCUyMHB5cmFtaWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="7 Chakra Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/chakra-pyramid.jpg" alt="7 Chakra Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">7 Chakra Pyramid</h3>
                         <p class="text-gray-400 mb-4">Full Spectrum Alignment</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$34.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="6" data-name="7 Chakra Pyramid" data-price="34.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="6" data-name="7 Chakra Pyramid" data-price="34.00" data-image="chakra-pyramid.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Green Aventurine Angel -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="angel">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1593282111262-8a054b543c75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z3JlZW4lMjBjcnlzdGFsfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Green Aventurine Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/green-aventurine-angel.jpg" alt="Green Aventurine Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Green Aventurine Angel</h3>
                         <p class="text-gray-400 mb-4">Heart Chakra Healing</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$28.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="7" data-name="Green Aventurine Angel" data-price="28.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="7" data-name="Green Aventurine Angel" data-price="28.00" data-image="green-aventurine-angel.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Large Starfish Design -->
-                <div class="product-card rounded-lg overflow-hidden relative">
+                <div class="product-card rounded-lg overflow-hidden relative" data-category="starfish">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hlbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Large Starfish Design" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/large-starfish.jpg" alt="Large Starfish Design" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Large Starfish Design</h3>
                         <p class="text-gray-400 mb-4">Ocean Energy Amplifier</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$32.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="8" data-name="Large Starfish Design" data-price="32.00">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="8" data-name="Large Starfish Design" data-price="32.00" data-image="large-starfish.jpg">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -746,7 +746,7 @@
                     <i class="fas fa-times text-white text-xl"></i>
                 </button>
             </div>
-            <div id="cart-items" class="mb-6">
+            <div id="cart-items" class="mb-6 max-h-[50vh] overflow-y-auto">
                 <!-- Cart items will be added here dynamically -->
                 <p class="text-center text-gray-400 py-8">Your cart is empty</p>
             </div>
@@ -760,7 +760,7 @@
                     <span>Calculated at checkout</span>
                 </div>
             </div>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal-form">
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="upload" value="1">
                 <input type="hidden" name="business" value="tikvahmeanhope@gmail.com">
@@ -768,7 +768,7 @@
                 <div id="paypal-items">
                     <!-- PayPal form items will be added here dynamically -->
                 </div>
-                <button type="submit" class="w-full btn-sacred py-3 rounded-full font-semibold mb-4">Proceed to Checkout</button>
+                <button type="submit" class="w-full btn-sacred py-3 rounded-full font-semibold mb-4" id="checkout-button">Proceed to Checkout</button>
             </form>
             <button id="continue-shopping" class="w-full border border-white hover:border-purple-300 text-white py-3 rounded-full font-semibold text-center transition duration-300">Continue Shopping</button>
         </div>
@@ -803,7 +803,7 @@
                     <p class="mb-6 text-gray-300 relative z-10">Since placing the orgonite pyramid next to my bed, my sleep has improved dramatically. I used to wake up several times a night, but now I sleep deeply and wake up feeling refreshed.</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Sarah L." class="w-full h-full object-cover">
+                            <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/testimonial-sarah.jpg" alt="Sarah L." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Sarah L.</h4>
@@ -818,7 +818,7 @@
                     <p class="mb-6 text-gray-300 relative z-10">The Buddha orgonite has become a central piece in my meditation practice. I can physically feel the energy when I hold it, and my meditations have become deeper and more insightful.</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Michael T." class="w-full h-full object-cover">
+                            <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/testimonial-michael.jpg" alt="Michael T." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Michael T.</h4>
@@ -833,7 +833,7 @@
                     <p class="mb-6 text-gray-300 relative z-10">I placed orgonite sculptures in each corner of my home, and the entire energy of my space has transformed. It feels lighter, more peaceful, and guests often comment on the positive atmosphere.</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Emma R." class="w-full h-full object-cover">
+                            <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/testimonial-emma.jpg" alt="Emma R." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Emma R.</h4>
@@ -926,10 +926,10 @@
                 <div>
                     <h3 class="text-lg font-bold mb-6 text-white">Categories</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Buddha Orgonite</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Orgonite Pyramids</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Angel Sculptures</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Starfish Orgonite</a></li>
+                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="buddha">Buddha Orgonite</a></li>
+                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="pyramid">Orgonite Pyramids</a></li>
+                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="angel">Angel Sculptures</a></li>
+                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="starfish">Starfish Orgonite</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Custom Orders</a></li>
                     </ul>
                 </div>
@@ -952,12 +952,15 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>&copy; 2025 3rd Eye Supply. All rights reserved.</p>
+                <p>&copy; 2023 3rd Eye Supply. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Store cart items in localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
         // Generate animated smoke
         function createSmokeEffect() {
             const smokeContainer = document.getElementById('smoke-container');
@@ -997,7 +1000,9 @@
             soundToggle.addEventListener('click', () => {
                 if (audioElement.paused) {
                     audioElement.volume = 0.2;
-                    audioElement.play();
+                    audioElement.play().catch(e => {
+                        console.log('Audio play failed:', e);
+                    });
                     soundIcon.className = 'fas fa-volume-up text-white text-xl';
                     
                     // Create sound wave animation
@@ -1018,35 +1023,46 @@
         
         // Shopping cart functionality
         function setupCart() {
-            const cartItems = [];
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
             const cartCount = document.getElementById('cart-count');
+            const mobileCartCount = document.getElementById('mobile-cart-count');
             const cartItemsContainer = document.getElementById('cart-items');
             const cartSubtotal = document.getElementById('cart-subtotal');
             const cartSummary = document.getElementById('cart-summary');
             const closeCartButton = document.getElementById('close-cart');
             const continueShoppingButton = document.getElementById('continue-shopping');
             const paypalItems = document.getElementById('paypal-items');
+            const navCartIcon = document.getElementById('nav-cart-icon');
+            const mobileCartIcon = document.getElementById('mobile-cart-icon');
+            const checkoutButton = document.getElementById('checkout-button');
+            
+            // Update cart display on page load
+            updateCart();
             
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const itemId = button.getAttribute('data-id');
                     const itemName = button.getAttribute('data-name');
                     const itemPrice = parseFloat(button.getAttribute('data-price'));
+                    const itemImage = button.getAttribute('data-image');
                     
                     // Check if item is already in cart
-                    const existingItem = cartItems.find(item => item.id === itemId);
+                    const existingItemIndex = cartItems.findIndex(item => item.id === itemId);
                     
-                    if (existingItem) {
-                        existingItem.quantity += 1;
+                    if (existingItemIndex !== -1) {
+                        cartItems[existingItemIndex].quantity += 1;
                     } else {
                         cartItems.push({
                             id: itemId,
                             name: itemName,
                             price: itemPrice,
+                            image: itemImage,
                             quantity: 1
                         });
                     }
+                    
+                    // Save to localStorage
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
                     
                     updateCart();
                     openCart();
@@ -1057,14 +1073,20 @@
                 // Update cart count
                 const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
                 cartCount.textContent = totalItems;
+                mobileCartCount.textContent = totalItems;
                 
                 // Update cart items display
                 if (cartItems.length === 0) {
                     cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 py-8">Your cart is empty</p>';
                     cartSubtotal.textContent = '$0.00';
                     paypalItems.innerHTML = '';
+                    checkoutButton.disabled = true;
+                    checkoutButton.classList.add('opacity-50');
                     return;
                 }
+                
+                checkoutButton.disabled = false;
+                checkoutButton.classList.remove('opacity-50');
                 
                 let cartHTML = '';
                 let paypalHTML = '';
@@ -1077,16 +1099,24 @@
                     cartHTML += `
                         <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-700">
                             <div class="flex items-center">
-                                <div class="mr-4">
-                                    <button class="text-gray-500 hover:text-white remove-item" data-index="${index}">×</button>
+                                <div class="w-16 h-16 mr-4 rounded overflow-hidden">
+                                    <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/${item.image}" alt="${item.name}" class="w-full h-full object-cover">
                                 </div>
                                 <div>
                                     <h4 class="font-medium">${item.name}</h4>
-                                    <p class="text-sm text-gray-400">Qty: ${item.quantity}</p>
+                                    <div class="flex items-center mt-2">
+                                        <button class="text-gray-400 hover:text-white decrease-quantity" data-index="${index}">-</button>
+                                        <span class="mx-2 text-sm">${item.quantity}</span>
+                                        <button class="text-gray-400 hover:text-white increase-quantity" data-index="${index}">+</button>
+                                        <button class="ml-4 text-red-400 hover:text-red-300 remove-item" data-index="${index}">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="text-right">
                                 <p class="font-medium">$${itemTotal.toFixed(2)}</p>
+                                <p class="text-sm text-gray-400">$${item.price.toFixed(2)} each</p>
                             </div>
                         </div>
                     `;
@@ -1108,6 +1138,31 @@
                     button.addEventListener('click', () => {
                         const index = parseInt(button.getAttribute('data-index'));
                         cartItems.splice(index, 1);
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        updateCart();
+                    });
+                });
+                
+                // Add event listeners to decrease quantity buttons
+                document.querySelectorAll('.decrease-quantity').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = parseInt(button.getAttribute('data-index'));
+                        if (cartItems[index].quantity > 1) {
+                            cartItems[index].quantity -= 1;
+                        } else {
+                            cartItems.splice(index, 1);
+                        }
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        updateCart();
+                    });
+                });
+                
+                // Add event listeners to increase quantity buttons
+                document.querySelectorAll('.increase-quantity').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = parseInt(button.getAttribute('data-index'));
+                        cartItems[index].quantity += 1;
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
                         updateCart();
                     });
                 });
@@ -1115,19 +1170,27 @@
             
             function openCart() {
                 cartSummary.classList.remove('translate-x-full');
+                document.body.classList.add('overflow-hidden');
             }
             
             function closeCart() {
                 cartSummary.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
             }
             
             closeCartButton.addEventListener('click', closeCart);
             continueShoppingButton.addEventListener('click', closeCart);
             
-            // Cart link in navigation
-            document.querySelector('nav a[href="#"]').addEventListener('click', (e) => {
+            // Cart links in navigation
+            navCartIcon.addEventListener('click', (e) => {
                 e.preventDefault();
                 openCart();
+            });
+            
+            mobileCartIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                openCart();
+                document.getElementById('mobile-nav').classList.add('hidden');
             });
         }
         
@@ -1158,22 +1221,27 @@
         
         // Mobile navigation
         function setupMobileNav() {
-            const mobileNavToggle = document.querySelector('.md\\:hidden');
+            const mobileNavToggle = document.getElementById('mobile-menu-button');
             const mobileNav = document.getElementById('mobile-nav');
             const closeButton = document.getElementById('close-mobile-nav');
             const mobileLinks = mobileNav.querySelectorAll('a');
             
             mobileNavToggle.addEventListener('click', () => {
                 mobileNav.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
             });
             
             closeButton.addEventListener('click', () => {
                 mobileNav.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
             });
             
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileNav.classList.add('hidden');
+                    if (!link.id || link.id !== 'mobile-cart-icon') {
+                        mobileNav.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }
                 });
             });
         }
@@ -1181,14 +1249,46 @@
         // Product category tabs
         function setupProductTabs() {
             const categoryTabs = document.querySelectorAll('.product-category-tab');
+            const productCards = document.querySelectorAll('.product-card');
+            const categoryLinks = document.querySelectorAll('.category-link');
+            
+            function filterProducts(category) {
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Update active tab
+                categoryTabs.forEach(tab => {
+                    if (tab.getAttribute('data-category') === category) {
+                        tab.classList.add('active', 'bg-purple-900', 'bg-opacity-30');
+                    } else {
+                        tab.classList.remove('active', 'bg-purple-900', 'bg-opacity-30');
+                    }
+                });
+                
+                // Scroll to products section
+                document.getElementById('products').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
             
             categoryTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    categoryTabs.forEach(t => t.classList.remove('active', 'bg-purple-900', 'bg-opacity-30'));
-                    tab.classList.add('active', 'bg-purple-900', 'bg-opacity-30');
-                    
-                    // Here you would normally filter products based on the selected category
-                    // Since we're keeping this simple, we'll just leave it as a UI effect
+                    const category = tab.getAttribute('data-category');
+                    filterProducts(category);
+                });
+            });
+            
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const category = link.getAttribute('data-category');
+                    filterProducts(category);
                 });
             });
         }
@@ -1218,6 +1318,11 @@
                     }
                 });
             });
+            
+            // Check for cart in localStorage on page load
+            if (localStorage.getItem('cartItems')) {
+                cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            }
         });
     </script>
 </body>
