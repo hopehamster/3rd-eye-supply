@@ -1,142 +1,1224 @@
-<!-- index.html - Homepage -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3rd Eye Supply | Spiritual Gifts & Tools</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Eye Supply - Sacred Orgonite Sculptures</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #8a2be2;
+            --secondary-purple: #9370db;
+            --primary-orange: #ff8c00;
+            --secondary-orange: #ffa500;
+            --bg-dark: #1a1a2e;
+            --text-light: #f7f7f7;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0f1a;
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .sacred-bg {
+            background: radial-gradient(circle, #1a1a2e 0%, #0f0f1a 100%);
+            position: relative;
+        }
+        
+        .sacred-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.unsplash.com/photo-1518709911915-712d5fd04677?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2160&q=80");
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .sacred-gradient {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-orange) 100%);
+        }
+        
+        .btn-sacred {
+            background: linear-gradient(to right, var(--primary-purple), var(--primary-orange));
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-sacred:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .btn-sacred::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-orange), var(--primary-purple));
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        .btn-sacred:hover::after {
+            opacity: 1;
+        }
+        
+        .product-card {
+            background: rgba(26, 26, 46, 0.7);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+        }
+        
+        .product-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, rgba(138, 43, 226, 0.1) 50%, transparent 70%);
+            opacity: 0;
+            transform: rotate(45deg);
+            transition: all 0.7s ease;
+            z-index: 0;
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translateY(-10%);
+        }
+        
+        .product-image {
+            transition: all 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .mandala-bg {
+            position: absolute;
+            opacity: 0.1;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        
+        .smoke {
+            position: fixed;
+            top: 0;
+            width: 100px;
+            height: 0;
+            opacity: 0;
+            filter: blur(8px);
+            animation: rise 10s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes rise {
+            0% {
+                opacity: 0;
+                height: 0;
+                transform: translateY(0%) scaleX(1);
+            }
+            5% {
+                opacity: 0.3;
+            }
+            40% {
+                opacity: 0.5;
+                height: 60vh;
+                transform: translateY(-60%) scaleX(1.5);
+            }
+            80% {
+                opacity: 0.1;
+                transform: translateY(-100%) scaleX(2);
+            }
+            100% {
+                opacity: 0;
+                height: 80vh;
+                transform: translateY(-120%) scaleX(3);
+            }
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5), 0 0 10px rgba(138, 43, 226, 0.3);
+        }
+
+        .benefit-card {
+            background: rgba(15, 15, 26, 0.4);
+            border-left: 3px solid var(--primary-purple);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateX(5px);
+            border-left: 3px solid var(--primary-orange);
+        }
+
+        .crystal-animation {
+            animation: crystal-glow 3s infinite alternate;
+        }
+
+        @keyframes crystal-glow {
+            0% {
+                filter: drop-shadow(0 0 3px rgba(138, 43, 226, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.8));
+            }
+        }
+
+        .sound-control {
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .sound-control:hover {
+            opacity: 1;
+        }
+
+        .product-category-tab {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-category-tab::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-purple), var(--primary-orange));
+            transition: all 0.3s ease;
+        }
+
+        .product-category-tab:hover::after,
+        .product-category-tab.active::after {
+            width: 100%;
+        }
+
+        .sacred-symbol {
+            position: absolute;
+            opacity: 0.3;
+            z-index: -1;
+            animation: rotate 120s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .sound-waves {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            animation: sound-wave 4s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes sound-wave {
+            0% {
+                width: 30px;
+                height: 30px;
+                opacity: 0.7;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-purple), var(--primary-orange));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .orgonite-description:first-letter {
+            font-size: 2em;
+            color: var(--primary-orange);
+            font-weight: bold;
+            float: left;
+            margin-right: 0.1em;
+            line-height: 0.8;
+        }
+
+        .cursor-glow {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: screen;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .cursor-glow {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="assets/images/logo.png" alt="3rd Eye Supply">
-        </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/products/buddhas.html">Buddhas</a>
-          <a class="navbar-item" href="/products/pyramids.html">Pyramids</a>
-          <a class="navbar-item" href="/products/angels.html">Angels</a>
-          <a class="navbar-item" href="/products/starfish.html">Starfish</a>
-          <a class="navbar-item" href="/about.html">Our Mission</a>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Animated Smoke -->
+    <div id="smoke-container"></div>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="tibetan-bells" loop>
+        <source src="https://soundbible.com/mp3/tibetan-singing-bowl-sound-meditation-single-strike-singingbowl-relaxing-healing-atmosphere-yoga-chakra-clear-1-26573.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Sound Control -->
+    <div class="fixed bottom-4 right-4 z-50 sound-control flex items-center bg-opacity-70 bg-gray-900 p-2 rounded-full">
+        <div class="sound-waves"></div>
+        <button id="sound-toggle" class="focus:outline-none p-2">
+            <i class="fas fa-volume-mute text-white text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-80 bg-gray-900 backdrop-filter backdrop-blur-md">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="sacred-symbol w-10 h-10">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="15" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="5" fill="url(#grad1)"/>
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                                    <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <a href="#" class="text-2xl font-bold ml-2 text-white">3rd Eye Supply</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-purple-300 transition duration-300">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-purple-300 transition duration-300">About</a>
+                    <a href="#benefits" class="nav-link text-white hover:text-purple-300 transition duration-300">Benefits</a>
+                    <a href="#products" class="nav-link text-white hover:text-purple-300 transition duration-300">Shop</a>
+                    <a href="#" class="flex items-center text-white hover:text-purple-300 transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-white text-xl"></i>
+                </button>
+            </div>
         </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <a href="#" class="button is-primary" id="cart-button">
-              <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-              <span>Cart (<span id="cart-count">0</span>)</span>
-            </a>
-          </div>
-        </div>
-      </div>
     </nav>
-  </header>
 
-  <section class="hero is-medium is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title is-1 has-text-centered">Where Ancient Wisdom Meets Modern Healing</h1>
-        <h2 class="subtitle has-text-centered">Explore handcrafted orgonite, crystals, and sacred tools.</h2>
-        <div class="buttons is-centered">
-          <a href="/products/" class="button is-light is-large">Enter the Shop</a>
+    <!-- Mobile Navigation (Hidden by default) -->
+    <div class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-50 transition-all duration-300 ease-in-out" id="mobile-nav">
+        <div class="flex justify-end p-6">
+            <button id="close-mobile-nav" class="focus:outline-none">
+                <i class="fas fa-times text-white text-2xl"></i>
+            </button>
         </div>
-      </div>
+        <div class="flex flex-col items-center justify-center space-y-8 h-full">
+            <a href="#home" class="text-xl text-white hover:text-purple-300 transition duration-300">Home</a>
+            <a href="#about" class="text-xl text-white hover:text-purple-300 transition duration-300">About</a>
+            <a href="#benefits" class="text-xl text-white hover:text-purple-300 transition duration-300">Benefits</a>
+            <a href="#products" class="text-xl text-white hover:text-purple-300 transition duration-300">Shop</a>
+            <a href="#" class="flex items-center text-xl text-white hover:text-purple-300 transition duration-300">
+                <i class="fas fa-shopping-cart mr-2"></i>
+                <span>Cart (0)</span>
+            </a>
+        </div>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="title has-text-centered">Explore Our Categories</h2>
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="assets/images/buddha.jpg" alt="Buddha">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4 has-text-centered">Buddhas</p>
-              <div class="buttons is-centered">
-                <a href="/products/buddhas.html" class="button is-primary">Shop Buddhas</a>
-              </div>
-            </div>
-          </div>
+    <!-- Hero Section -->
+    <section id="home" class="sacred-bg min-h-screen flex items-center justify-center pt-24 pb-16 relative overflow-hidden">
+        <div class="sacred-symbol w-96 h-96 opacity-5 absolute">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100,10 L123.5,76.8 L195.1,76.8 L137.8,119.4 L161.3,186.2 L100,143.6 L38.7,186.2 L62.2,119.4 L4.9,76.8 L76.5,76.8 Z" stroke="url(#grad2)" stroke-width="2" fill="none"/>
+                <path d="M100,30 L117.6,82.4 L174.4,82.4 L128.4,114.8 L146,167.2 L100,134.8 L54,167.2 L71.6,114.8 L25.6,82.4 L82.4,82.4 Z" stroke="url(#grad2)" stroke-width="2" fill="none"/>
+                <path d="M100,50 L111.8,88.2 L153.9,88.2 L119.1,110.3 L130.9,148.5 L100,126.4 L69.1,148.5 L80.9,110.3 L46.1,88.2 L88.2,88.2 Z" stroke="url(#grad2)" stroke-width="2" fill="none"/>
+                <defs>
+                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="assets/images/pyramid.jpg" alt="Pyramid">
-              </figure>
+        <div class="container mx-auto px-6 z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 glowing-text">Where Ancient Wisdom Meets Modern Healing</h1>
+                    <p class="text-xl mb-8 text-gray-300">Discover handcrafted orgonite sculptures infused with positive energy to transform your space and enhance your spiritual journey.</p>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                        <a href="#products" class="btn-sacred py-3 px-8 rounded-full font-semibold text-center">Shop Collection</a>
+                        <a href="#benefits" class="border border-white hover:border-purple-300 text-white py-3 px-8 rounded-full font-semibold text-center transition duration-300">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative crystal-animation">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full opacity-30 blur-xl animate-pulse"></div>
+                        <img src="https://images.unsplash.com/photo-1615486511289-92b91f59bce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3J5c3RhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Crystal Energy" class="rounded-full w-64 h-64 object-cover z-10 relative border-4 border-white border-opacity-20">
+                    </div>
+                </div>
             </div>
-            <div class="card-content">
-              <p class="title is-4 has-text-centered">Pyramids</p>
-              <div class="buttons is-centered">
-                <a href="/products/pyramids.html" class="button is-primary">Shop Pyramids</a>
-              </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
+                <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
             </div>
-          </div>
         </div>
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="assets/images/angel.jpg" alt="Angel">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4 has-text-centered">Angels</p>
-              <div class="buttons is-centered">
-                <a href="/products/angels.html" class="button is-primary">Shop Angels</a>
-              </div>
-            </div>
-          </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative overflow-hidden">
+        <div class="sacred-symbol w-96 h-96 opacity-5 absolute top-10 right-10">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,10 L61.8,35.5 L90,40.1 L70,60 L74.6,90 L50,75 L25.4,90 L30,60 L10,40.1 L38.2,35.5 Z" stroke="url(#grad3)" stroke-width="1" fill="none"/>
+                <path d="M50,20 L59.1,39.5 L80,43.1 L65,58 L68.6,80 L50,69 L31.4,80 L35,58 L20,43.1 L40.9,39.5 Z" stroke="url(#grad3)" stroke-width="1" fill="none"/>
+                <path d="M50,30 L56.4,43.5 L70,46.1 L60,57 L62.7,70 L50,63.5 L37.3,70 L40,57 L30,46.1 L43.6,43.5 Z" stroke="url(#grad3)" stroke-width="1" fill="none"/>
+                <defs>
+                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="assets/images/starfish.jpg" alt="Starfish">
-              </figure>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 glowing-text">Our Sacred Journey</h2>
+                <div class="w-24 h-1 sacred-gradient mx-auto rounded-full"></div>
             </div>
-            <div class="card-content">
-              <p class="title is-4 has-text-centered">Starfish</p>
-              <div class="buttons is-centered">
-                <a href="/products/starfish.html" class="button is-primary">Shop Starfish</a>
-              </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-lg opacity-20 blur-xl"></div>
+                        <img src="https://images.unsplash.com/photo-1616011462033-4a9c1bfaa0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNyeXN0YWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Our Journey" class="rounded-lg w-full h-auto relative z-10">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-300">Where Ancient Wisdom Meets Modern Healing</h3>
+                    <p class="text-gray-300 mb-6 orgonite-description">3rd Eye Supply is an innovative metaphysical boutique dedicated to bridging ancient spiritual wisdom with contemporary energy healing techniques. Founded in Las Vegas with a vision to bring authentic, high-quality orgonite creations to those seeking energetic balance and spiritual growth.</p>
+                    <p class="text-gray-300 mb-6">Each piece in our collection is handcrafted with intention, combining crystals, metals, and sacred geometry to create powerful tools that harmonize the energy in your space and support your inner journey.</p>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-hand-holding-heart text-purple-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Handcrafted</h4>
+                                <p class="text-sm text-gray-400">Each piece made with intention</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-gem text-purple-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Premium Materials</h4>
+                                <p class="text-sm text-gray-400">Ethically sourced crystals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 sacred-bg relative overflow-hidden">
+        <div class="sacred-symbol w-96 h-96 opacity-5 absolute bottom-10 left-10">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad4)" stroke-width="0.5"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="url(#grad4)" stroke-width="0.5"/>
+                <path d="M50,10 L90,50 L50,90 L10,50 Z" fill="none" stroke="url(#grad4)" stroke-width="0.5"/>
+                <path d="M26,26 L74,26 L74,74 L26,74 Z" fill="none" stroke="url(#grad4)" stroke-width="0.5"/>
+                <path d="M50,26 L74,50 L50,74 L26,50 Z" fill="none" stroke="url(#grad4)" stroke-width="0.5"/>
+                <defs>
+                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 glowing-text">The Sacred Power of Orgonite</h2>
+                <div class="w-24 h-1 sacred-gradient mx-auto rounded-full"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">Discover how these powerful energy tools can transform your space and elevate your consciousness.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="benefit-card p-6 rounded-lg">
+                    <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-broadcast-tower text-purple-300 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">EMF Protection</h3>
+                    <p class="text-gray-300">Orgonite transforms harmful electromagnetic frequencies from electronics and cell towers into beneficial energy, creating a protective shield around your living and working spaces.</p>
+                </div>
+                <div class="benefit-card p-6 rounded-lg">
+                    <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-purple-300 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Emotional Balance</h3>
+                    <p class="text-gray-300">The harmonizing properties of orgonite help stabilize emotional states, reduce stress and anxiety, and promote a sense of calm and well-being in your daily life.</p>
+                </div>
+                <div class="benefit-card p-6 rounded-lg">
+                    <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-bed text-purple-300 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Improved Sleep</h3>
+                    <p class="text-gray-300">Many users report more restful sleep and vivid dreams when placing orgonite near their bed, as it clears stagnant energy and creates a peaceful environment conducive to deep rest.</p>
+                </div>
+                <div class="benefit-card p-6 rounded-lg">
+                    <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-purple-300 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Plant Growth</h3>
+                    <p class="text-gray-300">Plants flourish in the presence of orgonite energy, growing stronger and healthier as orgonite balances the energy field and enhances life force in your garden or indoor plants.</p>
+                </div>
+                <div class="benefit-card p-6 rounded-lg">
+                    <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-purple-300 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Spiritual Growth</h3>
+                    <p class="text-gray-300">Orgonite supports meditation practices and spiritual development by clearing energetic blockages, opening the third eye, and facilitating deeper connection to higher consciousness.</p>
+                </div>
+                <div class="benefit-card p-6 rounded-lg">
+                    <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-purple-300 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Space Clearing</h3>
+                    <p class="text-gray-300">Negative energy cannot persist in the presence of orgonite. Place pieces throughout your home or office to transmute stagnant energies and create a vibrant, positive atmosphere.</p>
+                </div>
+            </div>
+            <div class="mt-16 bg-purple-900 bg-opacity-20 p-8 rounded-lg border border-purple-800">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <div class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-600 to-orange-500 flex items-center justify-center mx-auto">
+                            <i class="fas fa-atom text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h3 class="text-2xl font-bold mb-4">The Science Behind Orgonite</h3>
+                        <p class="text-gray-300 mb-4">Orgonite combines principles from Dr. Wilhelm Reich's research on orgone energy with modern crystal healing practices. The alternating layers of organic materials (resin) and inorganic materials (metals) create a continuous attraction and repulsion of energy that cleanses and balances the surrounding energetic field.</p>
+                        <p class="text-gray-300">The quartz crystals within each piece act as energy amplifiers, while copper coils direct this energy in specific patterns, creating a powerful tool for energy transformation and healing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 relative overflow-hidden">
+        <div class="sacred-symbol w-96 h-96 opacity-5 absolute top-10 right-10">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50,10 L90,50 L50,90 L10,50 Z" fill="none" stroke="url(#grad5)" stroke-width="0.5"/>
+                <path d="M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="url(#grad5)" stroke-width="0.5"/>
+                <path d="M40,20 L80,50 L40,80 L20,50 Z" fill="none" stroke="url(#grad5)" stroke-width="0.5"/>
+                <defs>
+                    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 glowing-text">Sacred Sculptures</h2>
+                <div class="w-24 h-1 sacred-gradient mx-auto rounded-full"></div>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">Each piece is handcrafted with intention, combining crystals, metals, and sacred geometry to create powerful energy tools.</p>
+            </div>
+            
+            <!-- Product Categories Tabs -->
+            <div class="flex flex-wrap justify-center mb-10 space-x-2 md:space-x-6">
+                <button class="product-category-tab py-2 px-4 text-white rounded-full bg-purple-900 bg-opacity-30 active">All Categories</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full">Buddha Orgonite</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full">Orgonite Pyramids</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full">Angel Sculptures</button>
+                <button class="product-category-tab py-2 px-4 text-white rounded-full">Starfish Orgonite</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Buddha Orgonite -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1631281351123-2b115d21fc56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVkZGhhJTIwc3RhdHVlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Buddha Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Buddha Orgonite</h3>
+                        <p class="text-gray-400 mb-4">Amber Resin with Copper Spiral</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$33.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="1" data-name="Buddha Orgonite" data-price="33.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Orgonite Pyramid -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1603008857241-12659649d723?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHlyYW1pZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Orgonite Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Orgonite Pyramid</h3>
+                        <p class="text-gray-400 mb-4">Multi-Crystal with Gold Flakes</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$29.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="2" data-name="Orgonite Pyramid" data-price="29.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Angel Sculpture -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1604177052603-c2b4cff228db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YW5nZWwlMjBzdGF0dWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Angel Sculpture" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Angel Sculpture</h3>
+                        <p class="text-gray-400 mb-4">Clear Resin with Healing Crystals</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$27.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="3" data-name="Angel Sculpture" data-price="27.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Starfish Orgonite -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcmZpc2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Starfish Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Starfish Orgonite</h3>
+                        <p class="text-gray-400 mb-4">Sea Shell and Mixed Gemstones</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$25.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="4" data-name="Starfish Orgonite" data-price="25.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blue Turquoise Angel -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1617791169255-0fae156583a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3J5c3RhbCUyMGFuZ2VsfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Blue Turquoise Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Blue Turquoise Angel</h3>
+                        <p class="text-gray-400 mb-4">Throat Chakra Healing</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$28.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="5" data-name="Blue Turquoise Angel" data-price="28.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 7 Chakra Pyramid -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3J5c3RhbCUyMHB5cmFtaWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="7 Chakra Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">7 Chakra Pyramid</h3>
+                        <p class="text-gray-400 mb-4">Full Spectrum Alignment</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$34.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="6" data-name="7 Chakra Pyramid" data-price="34.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Green Aventurine Angel -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1593282111262-8a054b543c75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z3JlZW4lMjBjcnlzdGFsfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Green Aventurine Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Green Aventurine Angel</h3>
+                        <p class="text-gray-400 mb-4">Heart Chakra Healing</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$28.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="7" data-name="Green Aventurine Angel" data-price="28.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Large Starfish Design -->
+                <div class="product-card rounded-lg overflow-hidden relative">
+                    <div class="relative overflow-hidden" style="padding-top: 100%;">
+                        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hlbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Large Starfish Design" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Large Starfish Design</h3>
+                        <p class="text-gray-400 mb-4">Ocean Energy Amplifier</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-purple-300">$32.00</span>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="8" data-name="Large Starfish Design" data-price="32.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Summary (Hidden by default) -->
+    <div id="cart-summary" class="fixed top-0 right-0 h-full w-full md:w-96 bg-gray-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-xl">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Your Sacred Cart</h2>
+                <button id="close-cart" class="focus:outline-none">
+                    <i class="fas fa-times text-white text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="mb-6">
+                <!-- Cart items will be added here dynamically -->
+                <p class="text-center text-gray-400 py-8">Your cart is empty</p>
+            </div>
+            <div class="border-t border-gray-700 pt-4 mb-6">
+                <div class="flex justify-between mb-2">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span>Shipping</span>
+                    <span>Calculated at checkout</span>
+                </div>
+            </div>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="upload" value="1">
+                <input type="hidden" name="business" value="tikvahmeanhope@gmail.com">
+                <input type="hidden" name="currency_code" value="USD">
+                <div id="paypal-items">
+                    <!-- PayPal form items will be added here dynamically -->
+                </div>
+                <button type="submit" class="w-full btn-sacred py-3 rounded-full font-semibold mb-4">Proceed to Checkout</button>
+            </form>
+            <button id="continue-shopping" class="w-full border border-white hover:border-purple-300 text-white py-3 rounded-full font-semibold text-center transition duration-300">Continue Shopping</button>
+        </div>
     </div>
-  </section>
 
-  <section class="section has-background-light">
-    <div class="container">
-      <h2 class="title has-text-centered">Our Mission</h2>
-      <p class="subtitle has-text-centered">3rd Eye Supply is a metaphysical boutique offering spiritually inspired products, cultural authenticity, and energy-aligned artistry to support your inner journey.</p>
-    </div>
-  </section>
+    <!-- Testimonials -->
+    <section class="py-20 sacred-bg relative overflow-hidden">
+        <div class="sacred-symbol w-96 h-96 opacity-5 absolute bottom-10 right-10">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad6)" stroke-width="0.5"/>
+                <path d="M50,5 L95,50 L50,95 L5,50 Z" fill="none" stroke="url(#grad6)" stroke-width="0.5"/>
+                <path d="M26,26 L74,26 L74,74 L26,74 Z" fill="none" stroke="url(#grad6)" stroke-width="0.5"/>
+                <path d="M50,15 L85,50 L50,85 L15,50 Z" fill="none" stroke="url(#grad6)" stroke-width="0.5"/>
+                <defs>
+                    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 glowing-text">Sacred Experiences</h2>
+                <div class="w-24 h-1 sacred-gradient mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 bg-opacity-60 p-8 rounded-lg border border-purple-800 relative">
+                    <div class="text-5xl text-purple-600 absolute -top-5 -left-3">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="mb-6 text-gray-300 relative z-10">Since placing the orgonite pyramid next to my bed, my sleep has improved dramatically. I used to wake up several times a night, but now I sleep deeply and wake up feeling refreshed.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Sarah L." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah L.</h4>
+                            <p class="text-sm text-purple-300">Los Angeles, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 p-8 rounded-lg border border-purple-800 relative">
+                    <div class="text-5xl text-purple-600 absolute -top-5 -left-3">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="mb-6 text-gray-300 relative z-10">The Buddha orgonite has become a central piece in my meditation practice. I can physically feel the energy when I hold it, and my meditations have become deeper and more insightful.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Michael T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-sm text-purple-300">Denver, CO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 p-8 rounded-lg border border-purple-800 relative">
+                    <div class="text-5xl text-purple-600 absolute -top-5 -left-3">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="mb-6 text-gray-300 relative z-10">I placed orgonite sculptures in each corner of my home, and the entire energy of my space has transformed. It feels lighter, more peaceful, and guests often comment on the positive atmosphere.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Emma R." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emma R.</h4>
+                            <p class="text-sm text-purple-300">Austin, TX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>© 2025 3rd Eye Supply | <a href="mailto:3rdEyeSupply@gmail.com">3rdEyeSupply@gmail.com</a></p>
-    </div>
-  </footer>
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-900 relative overflow-hidden">
+        <div class="sacred-symbol w-96 h-96 opacity-5 absolute top-0 left-0">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad7)" stroke-width="0.5"/>
+                <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad7)" stroke-width="0.5"/>
+                <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad7)" stroke-width="0.5"/>
+                <path d="M50,10 L90,50 L50,90 L10,50 Z" fill="none" stroke="url(#grad7)" stroke-width="0.5"/>
+                <defs>
+                    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 glowing-text">Join Our Sacred Community</h2>
+                <p class="text-gray-300 mb-8">Subscribe to receive exclusive offers, energy healing tips, and updates about new orgonite creations.</p>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
+                    <input type="email" placeholder="Your email address" class="px-6 py-3 rounded-full bg-gray-800 border border-gray-700 focus:outline-none focus:border-purple-500 text-white w-full md:w-auto">
+                    <button class="btn-sacred py-3 px-8 rounded-full font-semibold">Subscribe</button>
+                </div>
+                <p class="text-sm text-gray-500 mt-4">By subscribing, you agree to our Privacy Policy and consent to receive our newsletters.</p>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
-  <script src="assets/js/main.js"></script>
-  <!-- Foxy.io Cart Integration -->
-  <script src="https://cdn.foxycart.com/your-store/loader.js" async defer></script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad8)" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad8)" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad8)" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="15" fill="none" stroke="url(#grad8)" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="5" fill="url(#grad8)"/>
+                                <defs>
+                                    <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
+                                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold ml-2 text-white">3rd Eye Supply</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Where ancient wisdom and modern healing meet to create balance and connection.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">
+                            <i class="fab fa-etsy"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-purple-300 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-purple-300 transition duration-300">About Us</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-purple-300 transition duration-300">Orgonite Benefits</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-purple-300 transition duration-300">Shop</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Buddha Orgonite</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Orgonite Pyramids</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Angel Sculptures</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Starfish Orgonite</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Custom Orders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-purple-300"></i>
+                            <span class="text-gray-400">Las Vegas, NV, USA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-purple-300"></i>
+                            <span class="text-gray-400">3rdEyeSupply@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-3 text-purple-300"></i>
+                            <span class="text-gray-400">www.3rdEyeSupply.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 3rd Eye Supply. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Generate animated smoke
+        function createSmokeEffect() {
+            const smokeContainer = document.getElementById('smoke-container');
+            
+            function createSmokeColumn(left) {
+                const smoke = document.createElement('div');
+                smoke.className = 'smoke';
+                smoke.style.left = `${left}%`;
+                smoke.style.animationDelay = `${Math.random() * 5}s`;
+                smoke.style.backgroundImage = 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)';
+                smokeContainer.appendChild(smoke);
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    smoke.remove();
+                }, 10000);
+            }
+            
+            // Create initial smoke columns
+            for (let i = 10; i <= 90; i += 20) {
+                createSmokeColumn(i);
+            }
+            
+            // Continue creating smoke at intervals
+            setInterval(() => {
+                const left = 10 + Math.random() * 80;
+                createSmokeColumn(left);
+            }, 2000);
+        }
+        
+        // Handle audio controls
+        function setupAudio() {
+            const audioElement = document.getElementById('tibetan-bells');
+            const soundToggle = document.getElementById('sound-toggle');
+            const soundIcon = soundToggle.querySelector('i');
+            
+            soundToggle.addEventListener('click', () => {
+                if (audioElement.paused) {
+                    audioElement.volume = 0.2;
+                    audioElement.play();
+                    soundIcon.className = 'fas fa-volume-up text-white text-xl';
+                    
+                    // Create sound wave animation
+                    const waves = document.querySelector('.sound-waves');
+                    waves.style.animation = 'sound-wave 4s infinite linear';
+                    waves.style.opacity = '1';
+                } else {
+                    audioElement.pause();
+                    soundIcon.className = 'fas fa-volume-mute text-white text-xl';
+                    
+                    // Stop sound wave animation
+                    const waves = document.querySelector('.sound-waves');
+                    waves.style.animation = 'none';
+                    waves.style.opacity = '0';
+                }
+            });
+        }
+        
+        // Shopping cart functionality
+        function setupCart() {
+            const cartItems = [];
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.getElementById('cart-count');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartSummary = document.getElementById('cart-summary');
+            const closeCartButton = document.getElementById('close-cart');
+            const continueShoppingButton = document.getElementById('continue-shopping');
+            const paypalItems = document.getElementById('paypal-items');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const itemId = button.getAttribute('data-id');
+                    const itemName = button.getAttribute('data-name');
+                    const itemPrice = parseFloat(button.getAttribute('data-price'));
+                    
+                    // Check if item is already in cart
+                    const existingItem = cartItems.find(item => item.id === itemId);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cartItems.push({
+                            id: itemId,
+                            name: itemName,
+                            price: itemPrice,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCart();
+                    openCart();
+                });
+            });
+            
+            function updateCart() {
+                // Update cart count
+                const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update cart items display
+                if (cartItems.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 py-8">Your cart is empty</p>';
+                    cartSubtotal.textContent = '$0.00';
+                    paypalItems.innerHTML = '';
+                    return;
+                }
+                
+                let cartHTML = '';
+                let paypalHTML = '';
+                let subtotal = 0;
+                
+                cartItems.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    cartHTML += `
+                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-700">
+                            <div class="flex items-center">
+                                <div class="mr-4">
+                                    <button class="text-gray-500 hover:text-white remove-item" data-index="${index}">×</button>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">${item.name}</h4>
+                                    <p class="text-sm text-gray-400">Qty: ${item.quantity}</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-medium">$${itemTotal.toFixed(2)}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Add PayPal form items
+                    paypalHTML += `
+                        <input type="hidden" name="item_name_${index+1}" value="${item.name}">
+                        <input type="hidden" name="amount_${index+1}" value="${item.price.toFixed(2)}">
+                        <input type="hidden" name="quantity_${index+1}" value="${item.quantity}">
+                    `;
+                });
+                
+                cartItemsContainer.innerHTML = cartHTML;
+                paypalItems.innerHTML = paypalHTML;
+                cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = parseInt(button.getAttribute('data-index'));
+                        cartItems.splice(index, 1);
+                        updateCart();
+                    });
+                });
+            }
+            
+            function openCart() {
+                cartSummary.classList.remove('translate-x-full');
+            }
+            
+            function closeCart() {
+                cartSummary.classList.add('translate-x-full');
+            }
+            
+            closeCartButton.addEventListener('click', closeCart);
+            continueShoppingButton.addEventListener('click', closeCart);
+            
+            // Cart link in navigation
+            document.querySelector('nav a[href="#"]').addEventListener('click', (e) => {
+                e.preventDefault();
+                openCart();
+            });
+        }
+        
+        // Cursor glow effect
+        function setupCursorGlow() {
+            const cursor = document.querySelector('.cursor-glow');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            });
+            
+            // Expand cursor on interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .product-card');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursor.style.width = '50px';
+                    cursor.style.height = '50px';
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    cursor.style.width = '20px';
+                    cursor.style.height = '20px';
+                });
+            });
+        }
+        
+        // Mobile navigation
+        function setupMobileNav() {
+            const mobileNavToggle = document.querySelector('.md\\:hidden');
+            const mobileNav = document.getElementById('mobile-nav');
+            const closeButton = document.getElementById('close-mobile-nav');
+            const mobileLinks = mobileNav.querySelectorAll('a');
+            
+            mobileNavToggle.addEventListener('click', () => {
+                mobileNav.classList.remove('hidden');
+            });
+            
+            closeButton.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+            });
+            
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.add('hidden');
+                });
+            });
+        }
+        
+        // Product category tabs
+        function setupProductTabs() {
+            const categoryTabs = document.querySelectorAll('.product-category-tab');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    categoryTabs.forEach(t => t.classList.remove('active', 'bg-purple-900', 'bg-opacity-30'));
+                    tab.classList.add('active', 'bg-purple-900', 'bg-opacity-30');
+                    
+                    // Here you would normally filter products based on the selected category
+                    // Since we're keeping this simple, we'll just leave it as a UI effect
+                });
+            });
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            createSmokeEffect();
+            setupAudio();
+            setupCart();
+            setupCursorGlow();
+            setupMobileNav();
+            setupProductTabs();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === "#") return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
