@@ -133,42 +133,6 @@
             z-index: 0;
         }
         
-        .smoke {
-            position: fixed;
-            top: 0;
-            width: 100px;
-            height: 0;
-            opacity: 0;
-            filter: blur(8px);
-            animation: rise 10s infinite ease-in-out;
-            pointer-events: none;
-        }
-
-        @keyframes rise {
-            0% {
-                opacity: 0;
-                height: 0;
-                transform: translateY(0%) scaleX(1);
-            }
-            5% {
-                opacity: 0.3;
-            }
-            40% {
-                opacity: 0.5;
-                height: 60vh;
-                transform: translateY(-60%) scaleX(1.5);
-            }
-            80% {
-                opacity: 0.1;
-                transform: translateY(-100%) scaleX(2);
-            }
-            100% {
-                opacity: 0;
-                height: 80vh;
-                transform: translateY(-120%) scaleX(3);
-            }
-        }
-
         .glowing-text {
             text-shadow: 0 0 5px rgba(138, 43, 226, 0.5), 0 0 10px rgba(138, 43, 226, 0.3);
         }
@@ -197,15 +161,6 @@
             }
         }
 
-        .sound-control {
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-
-        .sound-control:hover {
-            opacity: 1;
-        }
-
         .product-category-tab {
             position: relative;
             overflow: hidden;
@@ -232,33 +187,6 @@
             position: absolute;
             opacity: 0.3;
             z-index: -1;
-            animation: rotate 120s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .sound-waves {
-            position: absolute;
-            border-radius: 50%;
-            border: 1px solid rgba(138, 43, 226, 0.2);
-            animation: sound-wave 4s infinite linear;
-            opacity: 0;
-        }
-
-        @keyframes sound-wave {
-            0% {
-                width: 30px;
-                height: 30px;
-                opacity: 0.7;
-            }
-            100% {
-                width: 300px;
-                height: 300px;
-                opacity: 0;
-            }
         }
 
         .nav-link {
@@ -280,22 +208,6 @@
             width: 100%;
         }
 
-        .scroll-down {
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
         .orgonite-description:first-letter {
             font-size: 2em;
             color: var(--primary-orange);
@@ -305,67 +217,34 @@
             line-height: 0.8;
         }
 
-        .cursor-glow {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: screen;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s;
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            .cursor-glow {
-                display: block;
+        @media print {
+            .no-print {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .sacred-bg::before {
+                opacity: 0.05;
+            }
+            
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Cursor Glow Effect -->
-    <div class="cursor-glow"></div>
-
-    <!-- Animated Smoke -->
-    <div id="smoke-container"></div>
-
-    <!-- Audio Player (Hidden) -->
-    <audio id="tibetan-bells" loop>
-        <source src="https://soundbible.com/mp3/tibetan-singing-bowl-sound-meditation-single-strike-singingbowl-relaxing-healing-atmosphere-yoga-chakra-clear-1-26573.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Sound Control -->
-    <div class="fixed bottom-4 right-4 z-50 sound-control flex items-center bg-opacity-70 bg-gray-900 p-2 rounded-full">
-        <div class="sound-waves"></div>
-        <button id="sound-toggle" class="focus:outline-none p-2">
-            <i class="fas fa-volume-mute text-white text-xl"></i>
-        </button>
-    </div>
-
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-opacity-80 bg-gray-900 backdrop-filter backdrop-blur-md">
+    <nav class="w-full z-50 bg-opacity-80 bg-gray-900 backdrop-filter backdrop-blur-md">
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <div class="sacred-symbol w-10 h-10">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad1)" stroke-width="2"/>
-                            <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad1)" stroke-width="2"/>
-                            <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad1)" stroke-width="2"/>
-                            <circle cx="50" cy="50" r="15" fill="none" stroke="url(#grad1)" stroke-width="2"/>
-                            <circle cx="50" cy="50" r="5" fill="url(#grad1)"/>
-                            <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
-                                    <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
+                    <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/logo.png" alt="3rd Eye Supply Logo" class="h-12">
                     <a href="#" class="text-2xl font-bold ml-2 text-white">3rd Eye Supply</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -373,12 +252,12 @@
                     <a href="#about" class="nav-link text-white hover:text-purple-300 transition duration-300">About</a>
                     <a href="#benefits" class="nav-link text-white hover:text-purple-300 transition duration-300">Benefits</a>
                     <a href="#products" class="nav-link text-white hover:text-purple-300 transition duration-300">Shop</a>
-                    <a href="#" class="flex items-center text-white hover:text-purple-300 transition duration-300" id="nav-cart-icon">
+                    <a href="#" class="flex items-center text-white hover:text-purple-300 transition duration-300">
                         <i class="fas fa-shopping-cart mr-2"></i>
                         <span id="cart-count">0</span>
                     </a>
                 </div>
-                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <button class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-white text-xl"></i>
                 </button>
             </div>
@@ -397,9 +276,9 @@
             <a href="#about" class="text-xl text-white hover:text-purple-300 transition duration-300">About</a>
             <a href="#benefits" class="text-xl text-white hover:text-purple-300 transition duration-300">Benefits</a>
             <a href="#products" class="text-xl text-white hover:text-purple-300 transition duration-300">Shop</a>
-            <a href="#" class="flex items-center text-xl text-white hover:text-purple-300 transition duration-300" id="mobile-cart-icon">
+            <a href="#" class="flex items-center text-xl text-white hover:text-purple-300 transition duration-300">
                 <i class="fas fa-shopping-cart mr-2"></i>
-                <span>Cart (<span id="mobile-cart-count">0</span>)</span>
+                <span>Cart (0)</span>
             </a>
         </div>
     </div>
@@ -431,13 +310,10 @@
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative crystal-animation">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full opacity-30 blur-xl animate-pulse"></div>
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/hero-crystal.jpg" alt="Crystal Energy" class="rounded-full w-64 h-64 object-cover z-10 relative border-4 border-white border-opacity-20">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full opacity-30 blur-xl"></div>
+                        <img src="https://images.unsplash.com/photo-1615486511289-92b91f59bce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3J5c3RhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Crystal Energy" class="rounded-full w-64 h-64 object-cover z-10 relative border-4 border-white border-opacity-20">
                     </div>
                 </div>
-            </div>
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
-                <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
             </div>
         </div>
     </section>
@@ -466,7 +342,7 @@
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                     <div class="relative">
                         <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-orange-500 rounded-lg opacity-20 blur-xl"></div>
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/about-journey.jpg" alt="Our Journey" class="rounded-lg w-full h-auto relative z-10">
+                        <img src="https://images.unsplash.com/photo-1616011462033-4a9c1bfaa0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNyeXN0YWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Our Journey" class="rounded-lg w-full h-auto relative z-10">
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-10">
@@ -613,18 +489,18 @@
                 <button class="product-category-tab py-2 px-4 text-white rounded-full" data-category="starfish">Starfish Orgonite</button>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Buddha Orgonite -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="buddha">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/buddha-orgonite.jpg" alt="Buddha Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/buddha1.jpg" alt="Buddha Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Buddha Orgonite</h3>
                         <p class="text-gray-400 mb-4">Amber Resin with Copper Spiral</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$33.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="1" data-name="Buddha Orgonite" data-price="33.00" data-image="buddha-orgonite.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="1" data-name="Buddha Orgonite" data-price="33.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -632,14 +508,14 @@
                 <!-- Orgonite Pyramid -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="pyramid">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/orgonite-pyramid.jpg" alt="Orgonite Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/pyramid1.jpg" alt="Orgonite Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Orgonite Pyramid</h3>
                         <p class="text-gray-400 mb-4">Multi-Crystal with Gold Flakes</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$29.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="2" data-name="Orgonite Pyramid" data-price="29.00" data-image="orgonite-pyramid.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="2" data-name="Orgonite Pyramid" data-price="29.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -647,14 +523,14 @@
                 <!-- Angel Sculpture -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="angel">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/angel-sculpture.jpg" alt="Angel Sculpture" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/angel1.jpg" alt="Angel Sculpture" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Angel Sculpture</h3>
                         <p class="text-gray-400 mb-4">Clear Resin with Healing Crystals</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$27.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="3" data-name="Angel Sculpture" data-price="27.00" data-image="angel-sculpture.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="3" data-name="Angel Sculpture" data-price="27.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -662,14 +538,14 @@
                 <!-- Starfish Orgonite -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="starfish">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/starfish-orgonite.jpg" alt="Starfish Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/starfish1.jpg" alt="Starfish Orgonite" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Starfish Orgonite</h3>
                         <p class="text-gray-400 mb-4">Sea Shell and Mixed Gemstones</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$25.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="4" data-name="Starfish Orgonite" data-price="25.00" data-image="starfish-orgonite.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="4" data-name="Starfish Orgonite" data-price="25.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -677,14 +553,14 @@
                 <!-- Blue Turquoise Angel -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="angel">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/blue-turquoise-angel.jpg" alt="Blue Turquoise Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/angel2.jpg" alt="Blue Turquoise Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Blue Turquoise Angel</h3>
                         <p class="text-gray-400 mb-4">Throat Chakra Healing</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$28.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="5" data-name="Blue Turquoise Angel" data-price="28.00" data-image="blue-turquoise-angel.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="5" data-name="Blue Turquoise Angel" data-price="28.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -692,14 +568,14 @@
                 <!-- 7 Chakra Pyramid -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="pyramid">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/chakra-pyramid.jpg" alt="7 Chakra Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/pyramid2.jpg" alt="7 Chakra Pyramid" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">7 Chakra Pyramid</h3>
                         <p class="text-gray-400 mb-4">Full Spectrum Alignment</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$34.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="6" data-name="7 Chakra Pyramid" data-price="34.00" data-image="chakra-pyramid.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="6" data-name="7 Chakra Pyramid" data-price="34.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -707,14 +583,14 @@
                 <!-- Green Aventurine Angel -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="angel">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/green-aventurine-angel.jpg" alt="Green Aventurine Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/angel3.jpg" alt="Green Aventurine Angel" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Green Aventurine Angel</h3>
                         <p class="text-gray-400 mb-4">Heart Chakra Healing</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$28.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="7" data-name="Green Aventurine Angel" data-price="28.00" data-image="green-aventurine-angel.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="7" data-name="Green Aventurine Angel" data-price="28.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -722,14 +598,14 @@
                 <!-- Large Starfish Design -->
                 <div class="product-card rounded-lg overflow-hidden relative" data-category="starfish">
                     <div class="relative overflow-hidden" style="padding-top: 100%;">
-                        <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/large-starfish.jpg" alt="Large Starfish Design" class="product-image absolute top-0 left-0 w-full h-full object-cover">
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/images/starfish2.jpg" alt="Large Starfish Design" class="product-image absolute top-0 left-0 w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Large Starfish Design</h3>
                         <p class="text-gray-400 mb-4">Ocean Energy Amplifier</p>
                         <div class="flex justify-between items-center">
                             <span class="text-2xl font-bold text-purple-300">$32.00</span>
-                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="8" data-name="Large Starfish Design" data-price="32.00" data-image="large-starfish.jpg">Add to Cart</button>
+                            <button class="btn-sacred py-2 px-4 rounded-full text-sm add-to-cart" data-id="8" data-name="Large Starfish Design" data-price="32.00">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -746,7 +622,7 @@
                     <i class="fas fa-times text-white text-xl"></i>
                 </button>
             </div>
-            <div id="cart-items" class="mb-6 max-h-[50vh] overflow-y-auto">
+            <div id="cart-items" class="mb-6">
                 <!-- Cart items will be added here dynamically -->
                 <p class="text-center text-gray-400 py-8">Your cart is empty</p>
             </div>
@@ -760,7 +636,7 @@
                     <span>Calculated at checkout</span>
                 </div>
             </div>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal-form">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="upload" value="1">
                 <input type="hidden" name="business" value="tikvahmeanhope@gmail.com">
@@ -768,7 +644,7 @@
                 <div id="paypal-items">
                     <!-- PayPal form items will be added here dynamically -->
                 </div>
-                <button type="submit" class="w-full btn-sacred py-3 rounded-full font-semibold mb-4" id="checkout-button">Proceed to Checkout</button>
+                <button type="submit" class="w-full btn-sacred py-3 rounded-full font-semibold mb-4">Proceed to Checkout</button>
             </form>
             <button id="continue-shopping" class="w-full border border-white hover:border-purple-300 text-white py-3 rounded-full font-semibold text-center transition duration-300">Continue Shopping</button>
         </div>
@@ -803,7 +679,7 @@
                     <p class="mb-6 text-gray-300 relative z-10">Since placing the orgonite pyramid next to my bed, my sleep has improved dramatically. I used to wake up several times a night, but now I sleep deeply and wake up feeling refreshed.</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/testimonial-sarah.jpg" alt="Sarah L." class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Sarah L." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Sarah L.</h4>
@@ -818,7 +694,7 @@
                     <p class="mb-6 text-gray-300 relative z-10">The Buddha orgonite has become a central piece in my meditation practice. I can physically feel the energy when I hold it, and my meditations have become deeper and more insightful.</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/testimonial-michael.jpg" alt="Michael T." class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Michael T." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Michael T.</h4>
@@ -833,7 +709,7 @@
                     <p class="mb-6 text-gray-300 relative z-10">I placed orgonite sculptures in each corner of my home, and the entire energy of my space has transformed. It feels lighter, more peaceful, and guests often comment on the positive atmosphere.</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/testimonial-emma.jpg" alt="Emma R." class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Emma R." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Emma R.</h4>
@@ -880,21 +756,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center mb-6">
-                        <div class="w-10 h-10">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad8)" stroke-width="2"/>
-                                <circle cx="50" cy="50" r="35" fill="none" stroke="url(#grad8)" stroke-width="2"/>
-                                <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad8)" stroke-width="2"/>
-                                <circle cx="50" cy="50" r="15" fill="none" stroke="url(#grad8)" stroke-width="2"/>
-                                <circle cx="50" cy="50" r="5" fill="url(#grad8)"/>
-                                <defs>
-                                    <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="rgba(138, 43, 226, 0.8)" />
-                                        <stop offset="100%" stop-color="rgba(255, 140, 0, 0.8)" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
+                        <img src="https://raw.githubusercontent.com/hopehamster/3rd-eye-supply/main/logo.png" alt="3rd Eye Supply Logo" class="h-12">
                         <span class="text-xl font-bold ml-2 text-white">3rd Eye Supply</span>
                     </div>
                     <p class="text-gray-400 mb-6">Where ancient wisdom and modern healing meet to create balance and connection.</p>
@@ -926,10 +788,10 @@
                 <div>
                     <h3 class="text-lg font-bold mb-6 text-white">Categories</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="buddha">Buddha Orgonite</a></li>
-                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="pyramid">Orgonite Pyramids</a></li>
-                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="angel">Angel Sculptures</a></li>
-                        <li><a href="#" class="category-link text-gray-400 hover:text-purple-300 transition duration-300" data-category="starfish">Starfish Orgonite</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Buddha Orgonite</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Orgonite Pyramids</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Angel Sculptures</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Starfish Orgonite</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-purple-300 transition duration-300">Custom Orders</a></li>
                     </ul>
                 </div>
@@ -952,117 +814,43 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 3rd Eye Supply. All rights reserved.</p>
+                <p>&copy; 2025 3rd Eye Supply. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Store cart items in localStorage
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        
-        // Generate animated smoke
-        function createSmokeEffect() {
-            const smokeContainer = document.getElementById('smoke-container');
-            
-            function createSmokeColumn(left) {
-                const smoke = document.createElement('div');
-                smoke.className = 'smoke';
-                smoke.style.left = `${left}%`;
-                smoke.style.animationDelay = `${Math.random() * 5}s`;
-                smoke.style.backgroundImage = 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)';
-                smokeContainer.appendChild(smoke);
-                
-                // Remove after animation completes
-                setTimeout(() => {
-                    smoke.remove();
-                }, 10000);
-            }
-            
-            // Create initial smoke columns
-            for (let i = 10; i <= 90; i += 20) {
-                createSmokeColumn(i);
-            }
-            
-            // Continue creating smoke at intervals
-            setInterval(() => {
-                const left = 10 + Math.random() * 80;
-                createSmokeColumn(left);
-            }, 2000);
-        }
-        
-        // Handle audio controls
-        function setupAudio() {
-            const audioElement = document.getElementById('tibetan-bells');
-            const soundToggle = document.getElementById('sound-toggle');
-            const soundIcon = soundToggle.querySelector('i');
-            
-            soundToggle.addEventListener('click', () => {
-                if (audioElement.paused) {
-                    audioElement.volume = 0.2;
-                    audioElement.play().catch(e => {
-                        console.log('Audio play failed:', e);
-                    });
-                    soundIcon.className = 'fas fa-volume-up text-white text-xl';
-                    
-                    // Create sound wave animation
-                    const waves = document.querySelector('.sound-waves');
-                    waves.style.animation = 'sound-wave 4s infinite linear';
-                    waves.style.opacity = '1';
-                } else {
-                    audioElement.pause();
-                    soundIcon.className = 'fas fa-volume-mute text-white text-xl';
-                    
-                    // Stop sound wave animation
-                    const waves = document.querySelector('.sound-waves');
-                    waves.style.animation = 'none';
-                    waves.style.opacity = '0';
-                }
-            });
-        }
-        
         // Shopping cart functionality
         function setupCart() {
+            const cartItems = [];
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
             const cartCount = document.getElementById('cart-count');
-            const mobileCartCount = document.getElementById('mobile-cart-count');
             const cartItemsContainer = document.getElementById('cart-items');
             const cartSubtotal = document.getElementById('cart-subtotal');
             const cartSummary = document.getElementById('cart-summary');
             const closeCartButton = document.getElementById('close-cart');
             const continueShoppingButton = document.getElementById('continue-shopping');
             const paypalItems = document.getElementById('paypal-items');
-            const navCartIcon = document.getElementById('nav-cart-icon');
-            const mobileCartIcon = document.getElementById('mobile-cart-icon');
-            const checkoutButton = document.getElementById('checkout-button');
-            
-            // Update cart display on page load
-            updateCart();
             
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const itemId = button.getAttribute('data-id');
                     const itemName = button.getAttribute('data-name');
                     const itemPrice = parseFloat(button.getAttribute('data-price'));
-                    const itemImage = button.getAttribute('data-image');
                     
                     // Check if item is already in cart
-                    const existingItemIndex = cartItems.findIndex(item => item.id === itemId);
+                    const existingItem = cartItems.find(item => item.id === itemId);
                     
-                    if (existingItemIndex !== -1) {
-                        cartItems[existingItemIndex].quantity += 1;
+                    if (existingItem) {
+                        existingItem.quantity += 1;
                     } else {
                         cartItems.push({
                             id: itemId,
                             name: itemName,
                             price: itemPrice,
-                            image: itemImage,
                             quantity: 1
                         });
                     }
-                    
-                    // Save to localStorage
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
                     
                     updateCart();
                     openCart();
@@ -1073,20 +861,14 @@
                 // Update cart count
                 const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
                 cartCount.textContent = totalItems;
-                mobileCartCount.textContent = totalItems;
                 
                 // Update cart items display
                 if (cartItems.length === 0) {
                     cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 py-8">Your cart is empty</p>';
                     cartSubtotal.textContent = '$0.00';
                     paypalItems.innerHTML = '';
-                    checkoutButton.disabled = true;
-                    checkoutButton.classList.add('opacity-50');
                     return;
                 }
-                
-                checkoutButton.disabled = false;
-                checkoutButton.classList.remove('opacity-50');
                 
                 let cartHTML = '';
                 let paypalHTML = '';
@@ -1099,24 +881,20 @@
                     cartHTML += `
                         <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-700">
                             <div class="flex items-center">
-                                <div class="w-16 h-16 mr-4 rounded overflow-hidden">
-                                    <img src="https://cdn.jsdelivr.net/gh/hopehamster/3rd-eye-supply@main/images/${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                                <div class="mr-4">
+                                    <button class="text-gray-500 hover:text-white remove-item" data-index="${index}">×</button>
                                 </div>
                                 <div>
                                     <h4 class="font-medium">${item.name}</h4>
-                                    <div class="flex items-center mt-2">
-                                        <button class="text-gray-400 hover:text-white decrease-quantity" data-index="${index}">-</button>
+                                    <div class="flex items-center mt-1">
+                                        <button class="decrease-quantity text-sm bg-gray-800 px-2 rounded" data-index="${index}">-</button>
                                         <span class="mx-2 text-sm">${item.quantity}</span>
-                                        <button class="text-gray-400 hover:text-white increase-quantity" data-index="${index}">+</button>
-                                        <button class="ml-4 text-red-400 hover:text-red-300 remove-item" data-index="${index}">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
+                                        <button class="increase-quantity text-sm bg-gray-800 px-2 rounded" data-index="${index}">+</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="text-right">
                                 <p class="font-medium">$${itemTotal.toFixed(2)}</p>
-                                <p class="text-sm text-gray-400">$${item.price.toFixed(2)} each</p>
                             </div>
                         </div>
                     `;
@@ -1138,31 +916,25 @@
                     button.addEventListener('click', () => {
                         const index = parseInt(button.getAttribute('data-index'));
                         cartItems.splice(index, 1);
-                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
                         updateCart();
                     });
                 });
                 
-                // Add event listeners to decrease quantity buttons
+                // Add event listeners to quantity buttons
                 document.querySelectorAll('.decrease-quantity').forEach(button => {
                     button.addEventListener('click', () => {
                         const index = parseInt(button.getAttribute('data-index'));
                         if (cartItems[index].quantity > 1) {
                             cartItems[index].quantity -= 1;
-                        } else {
-                            cartItems.splice(index, 1);
+                            updateCart();
                         }
-                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                        updateCart();
                     });
                 });
                 
-                // Add event listeners to increase quantity buttons
                 document.querySelectorAll('.increase-quantity').forEach(button => {
                     button.addEventListener('click', () => {
                         const index = parseInt(button.getAttribute('data-index'));
                         cartItems[index].quantity += 1;
-                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
                         updateCart();
                     });
                 });
@@ -1170,78 +942,40 @@
             
             function openCart() {
                 cartSummary.classList.remove('translate-x-full');
-                document.body.classList.add('overflow-hidden');
             }
             
             function closeCart() {
                 cartSummary.classList.add('translate-x-full');
-                document.body.classList.remove('overflow-hidden');
             }
             
             closeCartButton.addEventListener('click', closeCart);
             continueShoppingButton.addEventListener('click', closeCart);
             
-            // Cart links in navigation
-            navCartIcon.addEventListener('click', (e) => {
+            // Cart link in navigation
+            document.querySelector('nav a[href="#"]').addEventListener('click', (e) => {
                 e.preventDefault();
                 openCart();
-            });
-            
-            mobileCartIcon.addEventListener('click', (e) => {
-                e.preventDefault();
-                openCart();
-                document.getElementById('mobile-nav').classList.add('hidden');
-            });
-        }
-        
-        // Cursor glow effect
-        function setupCursorGlow() {
-            const cursor = document.querySelector('.cursor-glow');
-            
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = `${e.clientX}px`;
-                cursor.style.top = `${e.clientY}px`;
-            });
-            
-            // Expand cursor on interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .product-card');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', () => {
-                    cursor.style.width = '50px';
-                    cursor.style.height = '50px';
-                });
-                
-                element.addEventListener('mouseleave', () => {
-                    cursor.style.width = '20px';
-                    cursor.style.height = '20px';
-                });
             });
         }
         
         // Mobile navigation
         function setupMobileNav() {
-            const mobileNavToggle = document.getElementById('mobile-menu-button');
+            const mobileNavToggle = document.querySelector('.md\\:hidden');
             const mobileNav = document.getElementById('mobile-nav');
             const closeButton = document.getElementById('close-mobile-nav');
             const mobileLinks = mobileNav.querySelectorAll('a');
             
             mobileNavToggle.addEventListener('click', () => {
                 mobileNav.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
             });
             
             closeButton.addEventListener('click', () => {
                 mobileNav.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
             });
             
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    if (!link.id || link.id !== 'mobile-cart-icon') {
-                        mobileNav.classList.add('hidden');
-                        document.body.classList.remove('overflow-hidden');
-                    }
+                    mobileNav.classList.add('hidden');
                 });
             });
         }
@@ -1250,55 +984,30 @@
         function setupProductTabs() {
             const categoryTabs = document.querySelectorAll('.product-category-tab');
             const productCards = document.querySelectorAll('.product-card');
-            const categoryLinks = document.querySelectorAll('.category-link');
-            
-            function filterProducts(category) {
-                productCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-                
-                // Update active tab
-                categoryTabs.forEach(tab => {
-                    if (tab.getAttribute('data-category') === category) {
-                        tab.classList.add('active', 'bg-purple-900', 'bg-opacity-30');
-                    } else {
-                        tab.classList.remove('active', 'bg-purple-900', 'bg-opacity-30');
-                    }
-                });
-                
-                // Scroll to products section
-                document.getElementById('products').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
             
             categoryTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
+                    // Update active tab styles
+                    categoryTabs.forEach(t => t.classList.remove('active', 'bg-purple-900', 'bg-opacity-30'));
+                    tab.classList.add('active', 'bg-purple-900', 'bg-opacity-30');
+                    
+                    // Filter products
                     const category = tab.getAttribute('data-category');
-                    filterProducts(category);
-                });
-            });
-            
-            categoryLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const category = link.getAttribute('data-category');
-                    filterProducts(category);
+                    
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
         }
         
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
-            createSmokeEffect();
-            setupAudio();
             setupCart();
-            setupCursorGlow();
             setupMobileNav();
             setupProductTabs();
             
@@ -1318,11 +1027,6 @@
                     }
                 });
             });
-            
-            // Check for cart in localStorage on page load
-            if (localStorage.getItem('cartItems')) {
-                cartItems = JSON.parse(localStorage.getItem('cartItems'));
-            }
         });
     </script>
 </body>
