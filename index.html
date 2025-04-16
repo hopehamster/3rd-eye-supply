@@ -610,4 +610,24 @@
                 particle.style.animationDelay = `${Math.random() * 8}s`;
                 
                 // Random animation duration between 8 and 15 seconds
-                particle.style.animationDuration = `${Math.random() * 7 + 8}
+                particle.style.animationDuration = `${Math.random() * 7 + 8}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+        
+        // Regenerate particles periodically to ensure continuous effect
+        setInterval(() => {
+            particlesContainer.innerHTML = '';
+            createParticles();
+        }, 30000); // Every 30 seconds
+        
+        // Create sacred geometry animations
+        const sacredGeometryContainer = document.getElementById('sacred-geometry-container');
+        
+        // Define different sacred geometry types
+        const geometryTypes = [
+            { class: 'sacred-flower-of-life', rotation: true },
+            { class:
