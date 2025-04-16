@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sifter - Coming Soon</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <title>3rd Eye Supply - Mystical Products</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            background-color: #2a0845;
-            color: white;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #111;
+            overflow-x: hidden;
             animation: backgroundColorChange 15s infinite alternate;
             transition: background-color 2s ease;
-            overflow-x: hidden;
+            color: white;
         }
         
         @keyframes backgroundColorChange {
@@ -26,131 +33,66 @@
             100% { background-color: #8439e5; }
         }
         
-        .gradient-bg {
-            background: transparent; /* Remove the old gradient */
+        header {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
         
-        .btn-primary {
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(104, 41, 184, 0.4);
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .coming-soon-badge {
-            background: linear-gradient(45deg, #8e24aa, #5e35b1);
+        .content {
+            text-align: center;
             color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+            z-index: 10;
+            position: relative;
         }
-        .app-image {
-            width: 120%; /* Making images 20% larger */
-            max-width: 500px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-            transition: all 0.5s ease;
-        }
-        .app-image:hover {
-            transform: translateY(-10px);
-        }
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 30px;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
-        .testimonial-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .comparison-table {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-        .comparison-table .highlight {
-            background: rgba(132, 57, 229, 0.3);
-        }
-        .waitlist-form {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-        .waitlist-input {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .waitlist-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .section-heading {
-            font-weight: 700;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-        }
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            border-radius: 2px;
-        }
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .feature-icon {
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
-        /* Adding energy particles styling similar to 3rd Eye Supply */
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #f3ec78;
+            text-align: center;
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #ddd;
+            font-size: 1.2rem;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            background: linear-gradient(45deg, #6829b8, #8439e5);
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(104, 41, 184, 0.4);
+        }
+        
         .energy-particles {
             position: fixed;
             top: 0;
@@ -158,7 +100,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
         
         .particle {
@@ -186,290 +128,465 @@
             }
         }
         
-        /* Make sure content is above particles */
-        header, section, footer {
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1rem;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: #f3ec78;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-tab {
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tab:hover, .nav-tab.active {
+            background: linear-gradient(45deg, #6829b8, #8439e5);
+        }
+        
+        .product-section {
+            margin-bottom: 3rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+            background: rgba(0, 0, 0, 0.5);
             position: relative;
-            z-index: 5;
+            z-index: 10;
+        }
+        
+        .section-descriptor {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .logo {
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        /* Sacred Geometry Styles */
+        .sacred-geometry-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.2;
+        }
+        
+        .sacred-geometry {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease;
+        }
+        
+        .sacred-flower-of-life {
+            width: 200px;
+            height: 200px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='133' cy='100' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='67' cy='100' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='117' cy='58' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='83' cy='58' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='117' cy='142' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='83' cy='142' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-sri-yantra {
+            width: 180px;
+            height: 180px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cpolygon points='90,10 120,90 10,50 170,50 60,90' fill='none' stroke='white' stroke-width='1'/%3E%3Cpolygon points='90,10 30,170 90,90 150,170' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='90' cy='90' r='40' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-metatron {
+            width: 240px;
+            height: 240px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Ccircle cx='120' cy='120' r='50' fill='none' stroke='white' stroke-width='1'/%3E%3Cpolygon points='120,70 153,87 170,120 153,153 120,170 87,153 70,120 87,87' fill='none' stroke='white' stroke-width='1'/%3E%3Cline x1='70' y1='120' x2='170' y2='120' stroke='white' stroke-width='1'/%3E%3Cline x1='87' y1='87' x2='153' y2='153' stroke='white' stroke-width='1'/%3E%3Cline x1='153' y1='87' x2='87' y2='153' stroke='white' stroke-width='1'/%3E%3Cline x1='120' y1='70' x2='120' y2='170' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-spiral {
+            width: 150px;
+            height: 150px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cpath d='M75,75 m-15,0 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 M75,75 m-30,0 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0 M75,75 m-45,0 a45,45 0 1,0 90,0 a45,45 0 1,0 -90,0' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-merkaba {
+            width: 200px;
+            height: 200px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpolygon points='100,20 40,140 160,140' fill='none' stroke='white' stroke-width='1'/%3E%3Cpolygon points='100,180 40,60 160,60' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
         }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Energy Particles Background -->
+<body>
+    <!-- Energy Particles -->
     <div class="energy-particles" id="particles"></div>
     
-    <!-- Header -->
-    <header class="container mx-auto px-4 py-6">
-        <div class="flex justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-3xl font-bold">Sifter</h1>
-                <span class="ml-3 text-sm bg-purple-700 text-white px-2 py-1 rounded">BETA</span>
-            </div>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#explore" class="nav-link">Explore</a></li>
-                    <li><a href="#privacy" class="nav-link">Privacy</a></li>
-                    <li><a href="#marketplace" class="nav-link">Marketplace</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                </ul>
-            </nav>
-            <button class="md:hidden focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+    <!-- Sacred Geometry Background -->
+    <div class="sacred-geometry-container" id="sacred-geometry-container"></div>
+    
+    <header>
+        <img src="https://cdn1.genspark.ai/user-upload-image/rmbg_generated/0_ce281013-819b-438a-b255-6a1fecc05ec2" alt="3rd Eye Supply Logo" class="logo">
+        <p class="tagline">Where Ancient Wisdom Meets Modern Healing</p>
+        <p class="tagline">Discover handcrafted orgonite sculptures infused with positive energy to transform your space and enhance your spiritual journey.</p>
+        <div>
+            <a href="#pyramids" class="button">Pyramids</a>
+            <a href="#angels" class="button">Angels</a>
+            <a href="#starfish" class="button">Starfish</a>
+            <a href="#buddaz" class="button">Buddha Statues</a>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <div class="coming-soon-badge">
-                <i class="fas fa-rocket mr-2"></i> COMING SOON
-            </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Discover a new, discreet way to meet people for free!
-            </h1>
-            <p class="text-xl mb-8 text-gray-200">
-                Connect locally, explore nearby activities, and sell products with absolutely zero fees. Sifter brings people together in a safe, private, and economical way.
-            </p>
-            
-            <!-- Email Signup Form -->
-            <div class="waitlist-form p-6 mb-8">
-                <h3 class="text-xl font-semibold mb-4">Join our waitlist</h3>
-                <p class="mb-4 text-gray-300">Be the first to know when Sifter launches! Get early access and exclusive offers.</p>
-                <form class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Enter your email address" class="waitlist-input flex-grow" required>
-                    <button type="submit" class="btn-primary px-6 py-3 rounded-md font-semibold whitespace-nowrap">
-                        Join Waitlist
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-            <img src="https://page.genspark.site/v1/base64_upload/4f63fc56e3d3bb5a4730ac6106a986c8" alt="Sifter App Interface" class="app-image">
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="container mx-auto px-4 py-16 md:py-24">
-        <h2 class="section-heading text-center">Explore Amazing Features</h2>
-        <p class="text-xl text-center mb-16 text-gray-200 max-w-3xl mx-auto">
-            Everything you need to connect with people, discover local activities, and sell products with absolutely zero fees.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-user-secret text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Meet People Discreetly</h3>
-                <p class="text-gray-300 mb-6">
-                    Connect with like-minded individuals in your area while maintaining your privacy. Our discreet matching system ensures your personal information stays secure.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Create an anonymous profile</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Control who sees your information</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Connect with people for free</li>
-                </ul>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-map-marked-alt text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Explore Nearby Activities</h3>
-                <p class="text-gray-300 mb-6">
-                    Discover events, meetups, and activities happening around you in real-time. Our interactive map makes it easy to see what's happening now!
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Real-time map of local activities</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Filter by interest and distance</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Join events with one tap</li>
-                </ul>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-comment-dots text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Secure Chat Rooms</h3>
-                <p class="text-gray-300 mb-6">
-                    Easily create and manage chat rooms with auto-delete functionality to keep your conversations private and secure.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Auto-delete messages after set time</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Group chats with privacy controls</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> End-to-end encrypted messaging</li>
-                </ul>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-shield-alt text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Customizable Privacy</h3>
-                <p class="text-gray-300 mb-6">
-                    Take control of your digital footprint with customizable privacy settings that put you in charge of your data.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Granular privacy controls</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Control who can contact you</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Easy profile visibility management</li>
-                </ul>
-            </div>
-
-            <!-- Feature 5 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-store text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Zero-Fee Marketplace</h3>
-                <p class="text-gray-300 mb-6">
-                    Sell your products and services without paying a single penny in fees. Keep 100% of your earnings with our revolutionary marketplace.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> 0% commission on all sales</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Digital coupons and promotions</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Direct connection with local buyers</li>
-                </ul>
-            </div>
-
-            <!-- Feature 6 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-leaf text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Go Green with Digital</h3>
-                <p class="text-gray-300 mb-6">
-                    Reduce your carbon footprint with our digital coupons and paperless marketplace. Support local businesses while helping the environment.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Paperless digital coupons</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Support local sustainable businesses</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Reduce waste with digital transactions</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Exploration Section -->
-    <section id="explore" class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0 order-2 md:order-1">
-            <img src="https://page.genspark.site/v1/base64_upload/8d24b2dc4d95c6a7ef730f838113a32d" alt="Sifter Map Feature" class="app-image mx-auto">
-        </div>
-        <div class="md:w-1/2 order-1 md:order-2">
-            <h2 class="section-heading">Explore the Map.<br>Find What's Happening Now.</h2>
-            <p class="text-xl mb-8 text-gray-200">
-                Our interactive map lets you discover events, local businesses, and interesting people in your vicinity. Filter by categories and see what's happening around you in real-time.
-            </p>
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-user-friends text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">See Who's Nearby</h3>
-                        <p class="text-gray-300">Find people with similar interests in your area and connect instantly.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-calendar-alt text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Discover Local Events</h3>
-                        <p class="text-gray-300">See gatherings, meetups, and activities happening right now around you.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-filter text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Advanced Filtering</h3>
-                        <p class="text-gray-300">Filter by interests, distance, and availability to find your perfect match.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-tag text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Local Deals</h3>
-                        <p class="text-gray-300">Find businesses offering special promotions and zero-fee digital coupons.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rest of your HTML sections remain the same -->
     
-    <!-- Footer -->
-    <footer class="mt-16 py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between mb-8">
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-4">Sifter</h3>
-                    <p class="text-gray-300 max-w-md">
-                        A new, discreet way to meet people for free, explore nearby activities, and sell products with zero fees.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Features</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><a href="#features" class="hover:text-white">Meet People</a></li>
-                            <li><a href="#explore" class="hover:text-white">Explore Map</a></li>
-                            <li><a href="#privacy" class="hover:text-white">Privacy Controls</a></li>
-                            <li><a href="#marketplace" class="hover:text-white">Zero-Fee Marketplace</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Company</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><a href="#" class="hover:text-white">About Us</a></li>
-                            <li><a href="#" class="hover:text-white">Contact</a></li>
-                            <li><a href="#" class="hover:text-white">Careers</a></li>
-                            <li><a href="#" class="hover:text-white">Press</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                            <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
-                            <li><a href="#" class="hover:text-white">GDPR</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">
-                    &copy; 2023 Sifter. All rights reserved.
+    <main>
+        <section id="pyramids" class="product-section">
+            <div class="content">
+                <h2>Mystical Pyramids</h2>
+                <p class="section-descriptor">
+                    Our handcrafted pyramids harness the ancient power of sacred geometry. Each piece is carefully made with crystals, metals, and resin to create powerful energy tools that help balance chakras and enhance meditation.
                 </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-facebook text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
+                <div class="product-grid">
+                    <!-- Pyramid Images from GitHub repository -->
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_1.jpg" alt="Orgonite Pyramid 1" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 1</div>
+                            <div class="product-price">$39.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_2.jpg" alt="Orgonite Pyramid 2" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 2</div>
+                            <div class="product-price">$42.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_3.jpg" alt="Orgonite Pyramid 3" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 3</div>
+                            <div class="product-price">$45.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_4.jpg" alt="Orgonite Pyramid 4" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 4</div>
+                            <div class="product-price">$39.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_5.jpg" alt="Orgonite Pyramid 5" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 5</div>
+                            <div class="product-price">$43.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_6.jpg" alt="Orgonite Pyramid 6" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 6</div>
+                            <div class="product-price">$47.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_7.jpg" alt="Orgonite Pyramid 7" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 7</div>
+                            <div class="product-price">$41.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/pyramids/pyramid_8.jpg" alt="Orgonite Pyramid 8" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 8</div>
+                            <div class="product-price">$44.99</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+        
+        <section id="angels" class="product-section">
+            <div class="content">
+                <h2>Guardian Angels</h2>
+                <p class="section-descriptor">
+                    Our angel figurines serve as guardians of peace and tranquility. Handcrafted with love and intention, each angel carries unique energetic properties to protect your space and bring divine guidance.
+                </p>
+                <div class="product-grid">
+                    <!-- Angel Images from GitHub repository -->
+                    <div class="product-card">
+                        <img src="images/angels/angel_1.jpg" alt="Angel Figurine 1" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 1</div>
+                            <div class="product-price">$49.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_2.jpg" alt="Angel Figurine 2" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 2</div>
+                            <div class="product-price">$52.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_3.jpg" alt="Angel Figurine 3" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 3</div>
+                            <div class="product-price">$54.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_4.jpg" alt="Angel Figurine 4" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 4</div>
+                            <div class="product-price">$48.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_5.jpg" alt="Angel Figurine 5" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 5</div>
+                            <div class="product-price">$53.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_6.jpg" alt="Angel Figurine 6" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 6</div>
+                            <div class="product-price">$56.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_7.jpg" alt="Angel Figurine 7" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 7</div>
+                            <div class="product-price">$51.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/angels/angel_8.jpg" alt="Angel Figurine 8" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 8</div>
+                            <div class="product-price">$54.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="starfish" class="product-section">
+            <div class="content">
+                <h2>Ocean Starfish</h2>
+                <p class="section-descriptor">
+                    Our starfish collection symbolizes renewal and regeneration. These unique pieces help connect you to the healing energy of the ocean while bringing a touch of natural beauty to your space.
+                </p>
+                <div class="product-grid">
+                    <!-- Starfish Images from GitHub repository -->
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4833.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 1</div>
+                            <div class="product-price">$34.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4834.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 2</div>
+                            <div class="product-price">$36.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4836.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 3</div>
+                            <div class="product-price">$32.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4837.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 4</div>
+                            <div class="product-price">$33.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4838.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 5</div>
+                            <div class="product-price">$35.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4840.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 6</div>
+                            <div class="product-price">$37.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4841.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 7</div>
+                            <div class="product-price">$34.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/starfish/IMG_4842.JPG" alt="Starfish Ornament" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 8</div>
+                            <div class="product-price">$36.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="buddaz" class="product-section">
+            <div class="content">
+                <h2>Buddha Statues</h2>
+                <p class="section-descriptor">
+                    Our Buddha statues embody peace, wisdom, and enlightenment. Each statue is a reminder to stay present and centered, making them perfect for meditation spaces and as gifts for spiritual seekers.
+                </p>
+                <div class="product-grid">
+                    <!-- Buddha Images from GitHub repository -->
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_1.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 1</div>
+                            <div class="product-price">$59.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_3.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 3</div>
+                            <div class="product-price">$64.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_5.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 5</div>
+                            <div class="product-price">$62.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_7.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 7</div>
+                            <div class="product-price">$67.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_9.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 9</div>
+                            <div class="product-price">$65.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_11.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 11</div>
+                            <div class="product-price">$69.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_13.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 13</div>
+                            <div class="product-price">$63.99</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/buddaz/buddha_15.jpg" alt="Buddha Statue" class="product-image">
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 15</div>
+                            <div class="product-price">$66.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content">
+            <h2>About Our Products</h2>
+            <p class="section-descriptor">
+                At 3rd Eye Supply, we believe in the transformative power of energy-infused objects. Our handcrafted pieces combine ancient wisdom with modern aesthetics to create beautiful objects that not only decorate your space but also enhance your spiritual journey.
+            </p>
+            <p class="section-descriptor">
+                Each item is carefully made with intention and love, incorporating natural materials, crystals, and metals known for their energetic properties. Whether you're looking to balance your chakras, protect your energy field, or simply bring more beauty into your life, our collection has something for everyone.
+            </p>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="button">Shop Collection</a>
+                <a href="#" class="button">Learn More</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 3rd Eye Supply. All rights reserved.</p>
+        <p>Handcrafted with love and intention.</p>
     </footer>
-    
+
     <script>
         // Create energy particles
         const particlesContainer = document.getElementById('particles');
@@ -493,19 +610,4 @@
                 particle.style.animationDelay = `${Math.random() * 8}s`;
                 
                 // Random animation duration between 8 and 15 seconds
-                particle.style.animationDuration = `${Math.random() * 7 + 8}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        createParticles();
-        
-        // Regenerate particles periodically to ensure continuous effect
-        setInterval(() => {
-            particlesContainer.innerHTML = '';
-            createParticles();
-        }, 30000); // Every 30 seconds
-    </script>
-</body>
-</html>
+                particle.style.animationDuration = `${Math.random() * 7 + 8}
