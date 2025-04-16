@@ -1,3 +1,6 @@
+You're right! I'll ensure the sacred geometry symbols are properly included to fade in and out throughout the entire background. Here's the complete code with the sacred geometry animation properly implemented:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -626,10 +629,14 @@
         
         // Create sacred geometry animations
         const sacredGeometryContainer = document.getElementById('sacred-geometry-container');
-        
-        // Define different sacred geometry types
         const geometryTypes = [
-            { class: 'sacred-flower-of-life', rotation: true },
-            { class: 'sacred-sri-yantra', rotation: false },
-            { class: 'sacred-metatron', rotation: true },
-            { class: 'sacred-spiral',
+            'sacred-flower-of-life',
+            'sacred-sri-yantra',
+            'sacred-metatron',
+            'sacred-spiral',
+            'sacred-merkaba'
+        ];
+        
+        function createSacredGeometry() {
+            // Create 15 random sacred geometry symbols
+            for (let
