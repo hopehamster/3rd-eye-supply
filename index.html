@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sifter - Coming Soon</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <meta name="description" content="Handcrafted orgonite pyramids, angel figurines, and Buddha statues for spiritual healing and energy balance.">
+    <meta name="keywords" content="orgonite, sacred geometry, spiritual products, 3rd eye supply">
+    <meta name="author" content="3rd Eye Supply">
+    <title>3rd Eye Supply - Mystical Handcrafted Products</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    <link href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" rel="stylesheet">
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            background-color: #2a0845;
-            color: white;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #111;
             animation: backgroundColorChange 15s infinite alternate;
             transition: background-color 2s ease;
-            overflow-x: hidden;
+            color: white;
+            position: relative;
         }
         
         @keyframes backgroundColorChange {
@@ -26,131 +39,78 @@
             100% { background-color: #8439e5; }
         }
         
-        .gradient-bg {
-            background: transparent; /* Remove the old gradient */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba(0, 0, 0, 0.3);
         }
         
-        .btn-primary {
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            transition: all 0.3s ease;
+        header {
+            padding: 2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 20;
         }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(104, 41, 184, 0.4);
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .coming-soon-badge {
-            background: linear-gradient(45deg, #8e24aa, #5e35b1);
+        
+        .content {
+            text-align: center;
             color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            padding: 2rem;
+            border-radius: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+            z-index: 10;
+            position: relative;
         }
-        .app-image {
-            width: 120%; /* Making images 20% larger */
-            max-width: 500px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-            transition: all 0.5s ease;
-        }
-        .app-image:hover {
-            transform: translateY(-10px);
-        }
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 30px;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
-        .testimonial-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .comparison-table {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-        .comparison-table .highlight {
-            background: rgba(132, 57, 229, 0.3);
-        }
-        .waitlist-form {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-        .waitlist-input {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .waitlist-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .section-heading {
-            font-weight: 700;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-        }
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            border-radius: 2px;
-        }
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .feature-icon {
-            background: linear-gradient(45deg, #6829b8, #8439e5);
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            font-weight: 600;
         }
         
-        /* Adding energy particles styling similar to 3rd Eye Supply */
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #f3ec78;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #ddd;
+            font-size: 1.2rem;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            background: linear-gradient(45deg, #6829b8, #f3ec78);
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(104, 41, 184, 0.4);
+        }
+        
         .energy-particles {
             position: fixed;
             top: 0;
@@ -158,7 +118,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
         
         .particle {
@@ -170,342 +130,996 @@
         }
         
         @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.4;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(20px);
-                opacity: 0;
-            }
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
         }
         
-        /* Make sure content is above particles */
-        header, section, footer {
-            position: relative;
-            z-index: 5;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(243, 236, 120, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            max-width: 300px;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1rem;
+            font-weight: 400;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: #f3ec78;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-tab {
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .nav-tab:hover, .nav-tab.active {
+            background: linear-gradient(45deg, #6829b8, #f3ec78);
+        }
+        
+        .product-section {
+            margin-bottom: 3rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+        
+        .section-descriptor {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .logo {
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .sacred-geometry-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        
+        .sacred-geometry {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease;
+            animation: fadeInOut 10s infinite, floatGeometry 15s infinite ease-in-out;
+            will-change: opacity, transform;
+            filter: drop-shadow(0 0 10px rgba(104, 41, 184, 0.5));
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 0.3; }
+            80% { opacity: 0.3; }
+            100% { opacity: 0; }
+        }
+        
+        @keyframes floatGeometry {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+        
+        .sacred-flower-of-life {
+            width: 200px;
+            height: 200px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='133' cy='100' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='67' cy='100' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='117' cy='58' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='83' cy='58' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='117' cy='142' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='83' cy='142' r='33' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-sri-yantra {
+            width: 180px;
+            height: 180px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cpolygon points='90,10 120,90 10,50 170,50 60,90' fill='none' stroke='white' stroke-width='1'/%3E%3Cpolygon points='90,10 30,170 90,90 150,170' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='90' cy='90' r='40' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-metatron {
+            width: 240px;
+            height: 240px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Ccircle cx='120' cy='120' r='50' fill='none' stroke='white' stroke-width='1'/%3E%3Cpolygon points='120,70 153,87 170,120 153,153 120,170 87,153 70,120 87,87' fill='none' stroke='white' stroke-width='1'/%3E%3Cline x1='70' y1='120' x2='170' y2='120' stroke='white' stroke-width='1'/%3E%3Cline x1='87' y1='87' x2='153' y2='153' stroke='white' stroke-width='1'/%3E%3Cline x1='153' y1='87' x2='87' y2='153' stroke='white' stroke-width='1'/%3E%3Cline x1='120' y1='70' x2='120' y2='170' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-spiral {
+            width: 150px;
+            height: 150px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cpath d='M75,75 m-15,0 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 M75,75 m-30,0 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0 M75,75 m-45,0 a45,45 0 1,0 90,0 a45,45 0 1,0 -90,0' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        .sacred-merkaba {
+            width: 200px;
+            height: 200px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpolygon points='100,20 40,140 160,140' fill='none' stroke='white' stroke-width='1'/%3E%3Cpolygon points='100,180 40,60 160,60' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card:nth-child(2) { animation-delay: 0.1s; }
+        .product-card:nth-child(3) { animation-delay: 0.2s; }
+        .product-card:nth-child(4) { animation-delay: 0.3s; }
+        .product-card:nth-child(5) { animation-delay: 0.4s; }
+        .product-card:nth-child(6) { animation-delay: 0.5s; }
+        .product-card:nth-child(7) { animation-delay: 0.6s; }
+        .product-card:nth-child(8) { animation-delay: 0.7s; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .product-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .content { padding: 1rem; margin: 0 1rem 2rem; }
+            .logo { max-width: 200px; }
+            .sacred-flower-of-life, .sacred-merkaba { width: 150px; height: 150px; }
+            .sacred-sri-yantra { width: 120px; height: 120px; }
+            .sacred-metatron { width: 180px; height: 180px; }
+            .sacred-spiral { width: 100px; height: 100px; }
         }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Energy Particles Background -->
+<body>
+    <div id="particles-js"></div>
     <div class="energy-particles" id="particles"></div>
+    <div class="sacred-geometry-container" id="sacred-geometry-container"></div>
+    <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY"></div>
     
-    <!-- Header -->
-    <header class="container mx-auto px-4 py-6">
-        <div class="flex justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-3xl font-bold">Sifter</h1>
-                <span class="ml-3 text-sm bg-purple-700 text-white px-2 py-1 rounded">BETA</span>
-            </div>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#explore" class="nav-link">Explore</a></li>
-                    <li><a href="#privacy" class="nav-link">Privacy</a></li>
-                    <li><a href="#marketplace" class="nav-link">Marketplace</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                </ul>
-            </nav>
-            <button class="md:hidden focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+    <section style="background: url('/images/hero-bg.jpg') center/cover; padding: 5rem 1rem; text-align: center; color: white; z-index: 10; position: relative;">
+        <h1>Unlock Your Spiritual Potential</h1>
+        <p>Explore handcrafted orgonite and sacred geometry tools.</p>
+        <a href="#pyramids" class="button">Shop Now</a>
+    </section>
+    
+    <header>
+        <img src="/images/logo.png" alt="3rd Eye Supply Logo" class="logo">
+        <p class="tagline">Where Ancient Wisdom Meets Modern Healing</p>
+        <p class="tagline">Discover handcrafted orgonite sculptures infused with positive energy.</p>
+        <input type="text" id="search" placeholder="Search products..." style="padding: 0.5rem; border-radius: 5px; margin: 1rem 0;">
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-filter="all">All</div>
+            <div class="nav-tab" data-filter="pyramids">Pyramids</div>
+            <div class="nav-tab" data-filter="angels">Angels</div>
+            <div class="nav-tab" data-filter="starfish">Starfish</div>
+            <div class="nav-tab" data-filter="buddaz">Buddha</div>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <div class="coming-soon-badge">
-                <i class="fas fa-rocket mr-2"></i> COMING SOON
-            </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Discover a new, discreet way to meet people for free!
-            </h1>
-            <p class="text-xl mb-8 text-gray-200">
-                Connect locally, explore nearby activities, and sell products with absolutely zero fees. Sifter brings people together in a safe, private, and economical way.
-            </p>
-            
-            <!-- Email Signup Form -->
-            <div class="waitlist-form p-6 mb-8">
-                <h3 class="text-xl font-semibold mb-4">Join our waitlist</h3>
-                <p class="mb-4 text-gray-300">Be the first to know when Sifter launches! Get early access and exclusive offers.</p>
-                <form class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Enter your email address" class="waitlist-input flex-grow" required>
-                    <button type="submit" class="btn-primary px-6 py-3 rounded-md font-semibold whitespace-nowrap">
-                        Join Waitlist
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-            <img src="https://page.genspark.site/v1/base64_upload/4f63fc56e3d3bb5a4730ac6106a986c8" alt="Sifter App Interface" class="app-image">
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="container mx-auto px-4 py-16 md:py-24">
-        <h2 class="section-heading text-center">Explore Amazing Features</h2>
-        <p class="text-xl text-center mb-16 text-gray-200 max-w-3xl mx-auto">
-            Everything you need to connect with people, discover local activities, and sell products with absolutely zero fees.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-user-secret text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Meet People Discreetly</h3>
-                <p class="text-gray-300 mb-6">
-                    Connect with like-minded individuals in your area while maintaining your privacy. Our discreet matching system ensures your personal information stays secure.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Create an anonymous profile</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Control who sees your information</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Connect with people for free</li>
-                </ul>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-map-marked-alt text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Explore Nearby Activities</h3>
-                <p class="text-gray-300 mb-6">
-                    Discover events, meetups, and activities happening around you in real-time. Our interactive map makes it easy to see what's happening now!
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Real-time map of local activities</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Filter by interest and distance</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Join events with one tap</li>
-                </ul>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-comment-dots text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Secure Chat Rooms</h3>
-                <p class="text-gray-300 mb-6">
-                    Easily create and manage chat rooms with auto-delete functionality to keep your conversations private and secure.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Auto-delete messages after set time</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Group chats with privacy controls</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> End-to-end encrypted messaging</li>
-                </ul>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-shield-alt text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Customizable Privacy</h3>
-                <p class="text-gray-300 mb-6">
-                    Take control of your digital footprint with customizable privacy settings that put you in charge of your data.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Granular privacy controls</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Control who can contact you</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Easy profile visibility management</li>
-                </ul>
-            </div>
-
-            <!-- Feature 5 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-store text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Zero-Fee Marketplace</h3>
-                <p class="text-gray-300 mb-6">
-                    Sell your products and services without paying a single penny in fees. Keep 100% of your earnings with our revolutionary marketplace.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> 0% commission on all sales</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Digital coupons and promotions</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Direct connection with local buyers</li>
-                </ul>
-            </div>
-
-            <!-- Feature 6 -->
-            <div class="feature-card p-8">
-                <div class="feature-icon">
-                    <i class="fas fa-leaf text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-4">Go Green with Digital</h3>
-                <p class="text-gray-300 mb-6">
-                    Reduce your carbon footprint with our digital coupons and paperless marketplace. Support local businesses while helping the environment.
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Paperless digital coupons</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Support local sustainable businesses</li>
-                    <li><i class="fas fa-check text-green-400 mr-2"></i> Reduce waste with digital transactions</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Exploration Section -->
-    <section id="explore" class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0 order-2 md:order-1">
-            <img src="https://page.genspark.site/v1/base64_upload/8d24b2dc4d95c6a7ef730f838113a32d" alt="Sifter Map Feature" class="app-image mx-auto">
-        </div>
-        <div class="md:w-1/2 order-1 md:order-2">
-            <h2 class="section-heading">Explore the Map.<br>Find What's Happening Now.</h2>
-            <p class="text-xl mb-8 text-gray-200">
-                Our interactive map lets you discover events, local businesses, and interesting people in your vicinity. Filter by categories and see what's happening around you in real-time.
-            </p>
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-user-friends text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">See Who's Nearby</h3>
-                        <p class="text-gray-300">Find people with similar interests in your area and connect instantly.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-calendar-alt text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Discover Local Events</h3>
-                        <p class="text-gray-300">See gatherings, meetups, and activities happening right now around you.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-filter text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Advanced Filtering</h3>
-                        <p class="text-gray-300">Filter by interests, distance, and availability to find your perfect match.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="bg-purple-700 rounded-full p-2 mr-4 mt-1">
-                        <i class="fas fa-tag text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Local Deals</h3>
-                        <p class="text-gray-300">Find businesses offering special promotions and zero-fee digital coupons.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rest of your HTML sections remain the same -->
     
-    <!-- Footer -->
-    <footer class="mt-16 py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between mb-8">
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-4">Sifter</h3>
-                    <p class="text-gray-300 max-w-md">
-                        A new, discreet way to meet people for free, explore nearby activities, and sell products with zero fees.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Features</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><a href="#features" class="hover:text-white">Meet People</a></li>
-                            <li><a href="#explore" class="hover:text-white">Explore Map</a></li>
-                            <li><a href="#privacy" class="hover:text-white">Privacy Controls</a></li>
-                            <li><a href="#marketplace" class="hover:text-white">Zero-Fee Marketplace</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Company</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><a href="#" class="hover:text-white">About Us</a></li>
-                            <li><a href="#" class="hover:text-white">Contact</a></li>
-                            <li><a href="#" class="hover:text-white">Careers</a></li>
-                            <li><a href="#" class="hover:text-white">Press</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                            <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
-                            <li><a href="#" class="hover:text-white">GDPR</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">
-                    &copy; 2023 Sifter. All rights reserved.
+    <main>
+        <section id="pyramids" class="product-section">
+            <div class="content">
+                <h2>Mystical Pyramids</h2>
+                <p class="section-descriptor">
+                    Handcrafted pyramids harnessing sacred geometry with crystals and resin.
                 </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-facebook text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid1.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid1.jpg" alt="Orgonite Pyramid 1" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 1</div>
+                            <p>Amethyst-infused orgonite for chakra balancing.</p>
+                            <div class="product-price">$39.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-1"
+                                data-item-price="39.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 1"
+                                data-item-description="Amethyst-infused orgonite for chakra balancing">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid2.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid2.jpg" alt="Orgonite Pyramid 2" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 2</div>
+                            <p>Quartz-infused orgonite for energy cleansing.</p>
+                            <div class="product-price">$42.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-2"
+                                data-item-price="42.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 2"
+                                data-item-description="Quartz-infused orgonite for energy cleansing">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid3.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid3.jpg" alt="Orgonite Pyramid 3" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 3</div>
+                            <p>Rose quartz orgonite for emotional healing.</p>
+                            <div class="product-price">$45.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-3"
+                                data-item-price="45.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 3"
+                                data-item-description="Rose quartz orgonite for emotional healing">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid4.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid4.jpg" alt="Orgonite Pyramid 4" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 4</div>
+                            <p>Citrine orgonite for abundance.</p>
+                            <div class="product-price">$39.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-4"
+                                data-item-price="39.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 4"
+                                data-item-description="Citrine orgonite for abundance">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid5.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid5.jpg" alt="Orgonite Pyramid 5" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 5</div>
+                            <p>Lapis lazuli orgonite for intuition.</p>
+                            <div class="product-price">$43.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-5"
+                                data-item-price="43.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 5"
+                                data-item-description="Lapis lazuli orgonite for intuition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid6.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid6.jpg" alt="Orgonite Pyramid 6" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 6</div>
+                            <p>Obsidian orgonite for protection.</p>
+                            <div class="product-price">$47.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-6"
+                                data-item-price="47.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 6"
+                                data-item-description="Obsidian orgonite for protection">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid7.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid7.jpg" alt="Orgonite Pyramid 7" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 7</div>
+                            <p>Turquoise orgonite for communication.</p>
+                            <div class="product-price">$41.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-7"
+                                data-item-price="41.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 7"
+                                data-item-description="Turquoise orgonite for communication">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/pyramids/Pyramid8.webp" type="image/webp">
+                            <img src="/images/pyramids/Pyramid8.jpg" alt="Orgonite Pyramid 8" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Pyramid 8</div>
+                            <p>Clear quartz orgonite for clarity.</p>
+                            <div class="product-price">$44.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="pyramid-8"
+                                data-item-price="44.99"
+                                data-item-url="/"
+                                data-item-name="Orgonite Pyramid 8"
+                                data-item-description="Clear quartz orgonite for clarity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Create energy particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 30;
+        </section>
         
+        <section id="angels" class="product-section">
+            <div class="content">
+                <h2>Guardian Angels</h2>
+                <p class="section-descriptor">
+                    Angel figurines crafted to protect and bring divine guidance.
+                </p>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel1.webp" type="image/webp">
+                            <img src="/images/angels/Angel1.jpg" alt="Angel Figurine 1" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 1</div>
+                            <p>Rose quartz angel for love and peace.</p>
+                            <div class="product-price">$49.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-1"
+                                data-item-price="49.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 1"
+                                data-item-description="Rose quartz angel for love and peace">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel2.webp" type="image/webp">
+                            <img src="/images/angels/Angel2.jpg" alt="Angel Figurine 2" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 2</div>
+                            <p>Amethyst angel for spiritual growth.</p>
+                            <div class="product-price">$52.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-2"
+                                data-item-price="52.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 2"
+                                data-item-description="Amethyst angel for spiritual growth">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel3.webp" type="image/webp">
+                            <img src="/images/angels/Angel3.jpg" alt="Angel Figurine 3" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 3</div>
+                            <p>Clear quartz angel for clarity.</p>
+                            <div class="product-price">$54.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-3"
+                                data-item-price="54.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 3"
+                                data-item-description="Clear quartz angel for clarity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel4.webp" type="image/webp">
+                            <img src="/images/angels/Angel4.jpg" alt="Angel Figurine 4" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 4</div>
+                            <p>Lapis lazuli angel for intuition.</p>
+                            <div class="product-price">$48.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-4"
+                                data-item-price="48.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 4"
+                                data-item-description="Lapis lazuli angel for intuition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel5.webp" type="image/webp">
+                            <img src="/images/angels/Angel5.jpg" alt="Angel Figurine 5" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 5</div>
+                            <p>Obsidian angel for protection.</p>
+                            <div class="product-price">$53.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-5"
+                                data-item-price="53.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 5"
+                                data-item-description="Obsidian angel for protection">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel6.webp" type="image/webp">
+                            <img src="/images/angels/Angel6.jpg" alt="Angel Figurine 6" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 6</div>
+                            <p>Turquoise angel for communication.</p>
+                            <div class="product-price">$56.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-6"
+                                data-item-price="56.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 6"
+                                data-item-description="Turquoise angel for communication">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel7.webp" type="image/webp">
+                            <img src="/images/angels/Angel7.jpg" alt="Angel Figurine 7" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 7</div>
+                            <p>Citrine angel for abundance.</p>
+                            <div class="product-price">$51.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-7"
+                                data-item-price="51.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 7"
+                                data-item-description="Citrine angel for abundance">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/angels/Angel8.webp" type="image/webp">
+                            <img src="/images/angels/Angel8.jpg" alt="Angel Figurine 8" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Guardian Angel 8</div>
+                            <p>Green aventurine angel for prosperity.</p>
+                            <div class="product-price">$54.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="angel-8"
+                                data-item-price="54.99"
+                                data-item-url="/"
+                                data-item-name="Guardian Angel 8"
+                                data-item-description="Green aventurine angel for prosperity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="starfish" class="product-section">
+            <div class="content">
+                <h2>Ocean Starfish</h2>
+                <p class="section-descriptor">
+                    Starfish ornaments symbolizing renewal and ocean energy.
+                </p>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish1.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish1.jpg" alt="Starfish Ornament 1" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 1</div>
+                            <p>Turquoise starfish for emotional balance.</p>
+                            <div class="product-price">$34.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-1"
+                                data-item-price="34.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 1"
+                                data-item-description="Turquoise starfish for emotional balance">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish2.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish2.jpg" alt="Starfish Ornament 2" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 2</div>
+                            <p>Aquamarine starfish for calming energy.</p>
+                            <div class="product-price">$36.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-2"
+                                data-item-price="36.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 2"
+                                data-item-description="Aquamarine starfish for calming energy">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish3.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish3.jpg" alt="Starfish Ornament 3" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 3</div>
+                            <p>Coral starfish for vitality.</p>
+                            <div class="product-price">$32.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-3"
+                                data-item-price="32.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 3"
+                                data-item-description="Coral starfish for vitality">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish4.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish4.jpg" alt="Starfish Ornament 4" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 4</div>
+                            <p>Larimar starfish for serenity.</p>
+                            <div class="product-price">$33.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-4"
+                                data-item-price="33.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 4"
+                                data-item-description="Larimar starfish for serenity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish5.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish5.jpg" alt="Starfish Ornament 5" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 5</div>
+                            <p>Blue calcite starfish for relaxation.</p>
+                            <div class="product-price">$35.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-5"
+                                data-item-price="35.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 5"
+                                data-item-description="Blue calcite starfish for relaxation">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish6.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish6.jpg" alt="Starfish Ornament 6" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 6</div>
+                            <p>Green aventurine starfish for prosperity.</p>
+                            <div class="product-price">$37.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-6"
+                                data-item-price="37.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 6"
+                                data-item-description="Green aventurine starfish for prosperity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish7.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish7.jpg" alt="Starfish Ornament 7" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 7</div>
+                            <p>Moonstone starfish for intuition.</p>
+                            <div class="product-price">$34.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-7"
+                                data-item-price="34.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 7"
+                                data-item-description="Moonstone starfish for intuition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/starfish/Starfish8.webp" type="image/webp">
+                            <img src="/images/starfish/Starfish8.jpg" alt="Starfish Ornament 8" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Starfish Ornament 8</div>
+                            <p>Opal starfish for creativity.</p>
+                            <div class="product-price">$36.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="starfish-8"
+                                data-item-price="36.99"
+                                data-item-url="/"
+                                data-item-name="Starfish Ornament 8"
+                                data-item-description="Opal starfish for creativity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="buddaz" class="product-section">
+            <div class="content">
+                <h2>Buddha Statues</h2>
+                <p class="section-descriptor">
+                    Buddha statues for peace, wisdom, and enlightenment.
+                </p>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha1.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha1.jpg" alt="Buddha Statue 1" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 1</div>
+                            <p>Jade Buddha for serenity and mindfulness.</p>
+                            <div class="product-price">$59.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-1"
+                                data-item-price="59.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 1"
+                                data-item-description="Jade Buddha for serenity and mindfulness">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha2.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha2.jpg" alt="Buddha Statue 2" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 2</div>
+                            <p>Amethyst Buddha for spiritual growth.</p>
+                            <div class="product-price">$64.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-2"
+                                data-item-price="64.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 2"
+                                data-item-description="Amethyst Buddha for spiritual growth">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha3.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha3.jpg" alt="Buddha Statue 3" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 3</div>
+                            <p>Clear quartz Buddha for clarity.</p>
+                            <div class="product-price">$62.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-3"
+                                data-item-price="62.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 3"
+                                data-item-description="Clear quartz Buddha for clarity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha4.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha4.jpg" alt="Buddha Statue 4" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 4</div>
+                            <p>Lapis lazuli Buddha for intuition.</p>
+                            <div class="product-price">$67.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-4"
+                                data-item-price="67.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 4"
+                                data-item-description="Lapis lazuli Buddha for intuition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha5.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha5.jpg" alt="Buddha Statue 5" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 5</div>
+                            <p>Obsidian Buddha for protection.</p>
+                            <div class="product-price">$65.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-5"
+                                data-item-price="65.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 5"
+                                data-item-description="Obsidian Buddha for protection">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha6.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha6.jpg" alt="Buddha Statue 6" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 6</div>
+                            <p>Turquoise Buddha for communication.</p>
+                            <div class="product-price">$69.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-6"
+                                data-item-price="69.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 6"
+                                data-item-description="Turquoise Buddha for communication">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha7.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha7.jpg" alt="Buddha Statue 7" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 7</div>
+                            <p>Citrine Buddha for abundance.</p>
+                            <div class="product-price">$63.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-7"
+                                data-item-price="63.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 7"
+                                data-item-description="Citrine Buddha for abundance">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <picture>
+                            <source srcset="/images/buddaz/Buddha8.webp" type="image/webp">
+                            <img src="/images/buddaz/Buddha8.jpg" alt="Buddha Statue 8" class="product-image" loading="lazy">
+                        </picture>
+                        <div class="product-info">
+                            <div class="product-title">Buddha Statue 8</div>
+                            <p>Green aventurine Buddha for prosperity.</p>
+                            <div class="product-price">$66.99</div>
+                            <button class="button snipcart-add-item"
+                                data-item-id="buddha-8"
+                                data-item-price="66.99"
+                                data-item-url="/"
+                                data-item-name="Buddha Statue 8"
+                                data-item-description="Green aventurine Buddha for prosperity">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content">
+            <h2>About 3rd Eye Supply</h2>
+            <p class="section-descriptor">
+                Founded in 2020, we craft orgonite sculptures and spiritual tools with love and intention. Our artisans use ethically sourced crystals and metals to elevate your energy and space.
+            </p>
+        </section>
+        
+        <section class="content">
+            <h2>Customer Reviews</h2>
+            <p class="section-descriptor">
+                “This pyramid transformed my meditation space!” – Sarah K.
+            </p>
+            <p class="section-descriptor">
+                “The angel figurine brings such peace to my home.” – Michael T.
+            </p>
+        </section>
+        
+        <section class="content">
+            <h2>Shop with Confidence</h2>
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="/images/secure-checkout.png" alt="Secure Checkout" width="50">
+                <img src="/images/free-shipping.png" alt="Free Shipping" width="50">
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Contact: <a href="mailto:support@3rdeyesupply.com">support@3rdeyesupply.com</a></p>
+        <p>© 2025 3rd Eye Supply. All rights reserved.</p>
+        <p>Handcrafted with love and intention.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 1000 } },
+                color: { value: ["#ffffff", "#d8b9ff", "#f3ec78"] },
+                shape: { type: "circle" },
+                opacity: { value: 0.4, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+                size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 1 } },
+                line_linked: { enable: true, distance: 150, color: "#d8b9ff", opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 20;
         function createParticles() {
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
-                
-                // Random size between 5px and 20px
                 const size = Math.random() * 15 + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
-                
-                // Random position
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.bottom = `-${size}px`;
-                
-                // Random animation delay
                 particle.style.animationDelay = `${Math.random() * 8}s`;
-                
-                // Random animation duration between 8 and 15 seconds
                 particle.style.animationDuration = `${Math.random() * 7 + 8}s`;
-                
                 particlesContainer.appendChild(particle);
             }
         }
-        
         createParticles();
-        
-        // Regenerate particles periodically to ensure continuous effect
         setInterval(() => {
             particlesContainer.innerHTML = '';
             createParticles();
-        }, 30000); // Every 30 seconds
+        }, 30000);
+
+        const sacredGeometryContainer = document.getElementById('sacred-geometry-container');
+        const geometryTypes = ['sacred-flower-of-life', 'sacred-sri-yantra', 'sacred-metatron', 'sacred-spiral', 'sacred-merkaba'];
+        function createSacredGeometry() {
+            for (let i = 0; i < 15; i++) {
+                const symbol = document.createElement('div');
+                const type = geometryTypes[Math.floor(Math.random() * geometryTypes.length)];
+                symbol.classList.add('sacred-geometry', type);
+                symbol.style.left = `${Math.random() * 100}%`;
+                symbol.style.top = `${Math.random() * 100}%`;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 5 + 5;
+                symbol.style.animation = `fadeInOut ${duration}s infinite ${delay}s`;
+                sacredGeometryContainer.appendChild(symbol);
+            }
+        }
+        createSacredGeometry();
+        setInterval(() => {
+            sacredGeometryContainer.innerHTML = '';
+            createSacredGeometry();
+        }, 30000);
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('.product-card').forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                card.style.display = title.includes(query) ? 'block' : 'none';
+            });
+        });
+
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.dataset.filter;
+                document.querySelectorAll('.product-section').forEach(section => {
+                    section.style.display = filter === 'all' || section.id === filter ? 'block' : 'none';
+                });
+            });
+        });
     </script>
 </body>
 </html>
