@@ -32,6 +32,16 @@ jobs:
         working-directory: site
         run: npx astro build
 
+      - name: Pre-deploy path sanity (block bad asset paths)
+        run: |
+          set -e
+          if grep -R "href=\"_astro/" site/dist || grep -R "src=\"images/" site/dist || grep -R "srcset=\"images/" site/dist; then
+            echo "Found non-prefixed asset paths (should start with /3rd-eye-supply/)." >&2
+            exit 1
+          else
+            echo "Asset paths look correct."
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -47,3 +57,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  smoke:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post-deploy smoke test (200 checks)
+        run: |
+          set -e
+          urls=(
+            "https://hopehamster.github.io/3rd-eye-supply/"
+            "https://hopehamster.github.io/3rd-eye-supply/_astro/about.Km8tFqjv.css"
+            "https://hopehamster.github.io/3rd-eye-supply/images/pyramids/bulkresizephotos.com_pyramids-4-sided-1-cover.webp"
+          )
+          for u in "${urls[@]}"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$u")
+            if [ "$code" -ge 200 ] && [ "$code" -lt 400 ]; then
+              echo "OK $u $code"
+            else
+              echo "FAIL $u $code" >&2
+              exit 1
+            fi
+          done
