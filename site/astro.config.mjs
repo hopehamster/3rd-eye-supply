@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://hopehamster.github.io',
-  base: '/3rd-eye-supply',
+  site: 'https://3rdeyesupply.com',
+  base: '/',
   integrations: [
     tailwind(),
     sitemap()
