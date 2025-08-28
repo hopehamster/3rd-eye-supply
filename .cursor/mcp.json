@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "ai-image-gen": {
+      "command": "node",
+      "args": [
+        "./ai-image-gen-mcp/dist/server.js"
+      ],
+      "env": {
+        "REPLICATE_API_TOKEN": "r8_cAwiCmVgAmSLVMW1vxlIhkUGsKpwaMv3LkZH0"
+      }
+    },
+    "blender-mcp": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "./blender-mcp",
+        "run",
+        "blender-mcp"
+      ]
+    },
+    "unreal-mcp": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "./unreal-mcp/Python",
+        "run",
+        "unreal_mcp_server.py"
+      ]
+    }
+  }
+}

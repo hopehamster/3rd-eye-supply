@@ -1,0 +1,90 @@
+﻿PREMIUM THEME SELECTION: Is the theme selected that is supported by Shopify to handle the design of your website's backend. The theme you choose will determine the professional look and feel of your store.
+STORE CUSTOMIZATION ($205): This involves designing your store to effectively communicate your brand's message, identity, and values to your target audience.
+You can then create pages on your Shopify store to categorize, collect, or feature your products.
+APPS INTEGRATION($57): This is adding apps to your storewill allow you to have full control and functionality of your store, allowing you to grow and scale your business effectively.
+TRUSTED BADGE(Free): To establish trust with your customers, it's essential to include a trusted badge on your store. This will make your store appear more credible and trustworthy, which will help to boost sales.
+LIVE CHAT SUPPORT(Free):  is a plugin that allows visitors to chat with your store staff or owner directly, in case they encounter any issues or want to discuss something.
+FAVICON($50):  is a small 16×16 pixel icon that serves as branding for your website. Its main purpose is to help visitors locate your page easier when they have multiple tabs open. Due to their tiny size, favicons work best as simple images or one to three characters of text.
+TESTIMONIALS PAGE($25): are a great way to showcase your satisfied customers and tell visitors what people are saying about your business.
+Finally, you can add a professional music background to your store to make it more engaging and exciting for customers. This will play automatically when someone visits your store and will give them the joy and enthusiasm to buy anything and partner with your business.
+
+
+My work steps are:
+1. Know your niche
+2. Select theme
+3. Do customization & coding (if need)
+4. Install all important apps for your store
+5. Competitor Research
+6. Prepare product descriptions (if need)
+7. Product listing
+8. Prepare all social handle's business pages
+9. Start marketing for establish your brand
+10. VA support
+11. Will be your teaching assistant
+
+
+1. Products & Inventory: Already you have niche and uploaded 85% products
+2. Choose a theme: Already you selected
+3. Essential apps: Adding apps for social proof, reviews, and abandoned cart recovery.
+4. Payment gateway Integrations
+5. Currency & taxes: Set up local currencies and configure taxes based on your region.
+6. Shipping settings
+7. Custom domain: Already you have
+8. Policy pages: Add essential page like Privacy, Refund, and Shipping.
+9.SEO settings: Optimize product pages with meta titles and descriptions for search engines.
+10. Google Analytics & Facebook Pixel: Install tracking tools to monitor site traffic and customer behavior.
+
+
+Key Features Needed - upselling, product management, order management, marketing, social media integration, customer support, financials, security
+, 
+https://www.reportpundit.com/post/essential-shopify-apps-for-your-business 
+1. Selling
+   1. Upselling
+      1. Show recent orders app - ongoing display live and recent sales, postings, etc.
+      2. Product Addons
+      3. Abandon cart
+      4. Klarna - Offer to customers
+      5. Fodane - upselling, bundles, increase conversion
+      6. Discounts/Coupons - 
+         1. Smile loyalty and reward - rewards bar, referral widgets
+         2. Checkout Plus - discounts upselling
+      7. Bundle
+      8. Smart Checkout - Easy checkout process
+   2. Product Management
+      1. Varients, Product Filter and search
+      2. Matrixify - Use for major product updates
+      3. Product Personalizer - Personalized product preview
+      4. Best Fit Size Chart - size chart app
+      5. PageFly - Custom build landing pags builder
+      6. Custome Fields - Product Personalization
+      7. Alert Me! - Restock alerts
+      8. Product Sourcing - Drop Shipping
+   3. Order Management - Fullfiling, Managing, Shipping
+2. Marketing
+   1. Favicon - Small Tab Icon
+   2. Klaviyo - Email marketing
+   3. Vitals - All-in-One conversion marketing app - Reviews, Bundles, Upsells, Replays, Back-in-Stock
+   4. Background Music if necessary, 
+   5. Bulk Image Edit - SEO images alt tags
+   6. Postscript SMS Marketing - SMS Marketing
+   7. AMP - Accelerated Mobile Pages
+   8. Category Breadcrumbs - Track the path shoppers took to arrive at page
+   9. Shop App - List products on Shopify shopping marketplace (gt more views)
+   10. Ga4 System - Google Analytics have track site coversions
+   11. Social Media Integration
+      1. SocialShop - Social media shopping feeds
+      2. Simple Affiliate - Set up own affiliate program
+   12. Social Media Integration/Social Proof
+      1. Judge me product review
+      2. Trusted badge
+      3. customer testimonial
+      4. Sheets - GOLD MINE - update your store meta data, google shopping data all via google sheets, even inventory basically update anything live 
+3. Customer Support
+   1. Zendesk - Live chat
+4. Financials
+   1. Avalara or Taxjar - For all nexus taxes
+   2. Easy GDPR + Cookie Bar - To serve European clients
+   3. PayHem - Reporting
+5. Security
+   1. Fraud Filter - Fraud Checks
+   2. Rewind - Auto bakcup

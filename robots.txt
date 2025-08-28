@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://3rdeyesupply.com/sitemap-index.xml
+User-agent: *
+Allow: /

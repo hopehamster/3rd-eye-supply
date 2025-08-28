@@ -1,0 +1,16 @@
+Google Drive Shared Folders and Documents:
+
+1. Folder ID: 0BxGOxkES4OqteG03SFlKLUsySTA (with resourcekey)
+2. Folder ID: 1ja6iyvjU1uIYBE-yQ4DXTlWInXAwVXR5
+3. Folder ID: 1LBLCZSro2n2c5DYBs1C_84TnxxBW_rpZ
+4. Folder ID: 1PfjxK-T-PZdxz7dY9J1daMncw-Hue4my
+5. Folder ID: 10CRCky6QGjzB_Xq7pwSqWMvTTk1YPZGm
+6. Folder ID: 1XvyIrtHaEa2oUBnyyfNpBmRrkuc1IEJ4
+7. Folder ID: 1ereCOYvLvFr-iI3UYJastBIvPxkhJ5jXqPoNkFM53JQ
+8. Folder ID: 13sKHcFTR-_uJ5-XhGAo7TzP94BCg3ULB
+9. Folder ID: 1s9Sac7VQRkxW52SmaNi0-4i4zSQTbBVx
+10. Folder ID: 1t6fJtDabnrG0Cl9XyGMRHSSCJ7_qEIsY
+11. Folder ID: 1aQpV84GF4ImEM_LzfCwG1M5NDkVgEzMy
+12. Spreadsheet ID: 1X5xAg5STuTFZQWuNXt0HZVDwAneZ4l9IFl2XqBP8jAE
+13. Spreadsheet ID: 1KBBY2FQ05nxu21lXhDEnDNk4SIpfvLXdK5TobkJVnwA
+14. Document ID: 1JU8ekJezdyatXWpOsbbUeHQN5JFfcf2uPSW9Z1IqDi4
