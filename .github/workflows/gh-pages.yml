@@ -79,3 +79,14 @@ jobs:
               exit 1
             fi
           done
+
+  linkcheck:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Link checker (lychee) against deployed site
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress --accept 200..399 --max-retries 3 --retry-wait-time 2 https://hopehamster.github.io/3rd-eye-supply/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
