@@ -17,7 +17,7 @@ const mockCJProducts = [
     productDescription: "Beautiful set of healing crystals including amethyst and rose quartz",
     category: "Crystals",
     inventory: 150,
-    images: ["https://example.com/crystal-set.jpg"],
+    images: ["images/incense/gaia-cover.webp"],
     weight: "0.5"
   },
   {
@@ -27,7 +27,7 @@ const mockCJProducts = [
     productDescription: "Ultrasonic aromatherapy diffuser with 7 LED light colors",
     category: "Aromatherapy",
     inventory: 200,
-    images: ["https://example.com/diffuser.jpg"],
+    images: ["images/incense/gaia-cover.webp"],
     weight: "0.3"
   },
   {
@@ -37,7 +37,7 @@ const mockCJProducts = [
     productDescription: "Premium non-slip yoga mat perfect for meditation and yoga practice",
     category: "Yoga",
     inventory: 100,
-    images: ["https://example.com/yoga-mat.jpg"],
+    images: ["images/incense/gaia-cover.webp"],
     weight: "1.5"
   },
   {
@@ -47,7 +47,7 @@ const mockCJProducts = [
     productDescription: "Traditional sandalwood incense cones for meditation and relaxation",
     category: "Incense",
     inventory: 300,
-    images: ["https://example.com/incense-cones.jpg"],
+    images: ["images/incense/gaia-cover.webp"],
     weight: "0.2"
   },
   {
@@ -57,7 +57,7 @@ const mockCJProducts = [
     productDescription: "Classic Rider-Waite tarot deck with guidebook",
     category: "Divination",
     inventory: 75,
-    images: ["https://example.com/tarot-deck.jpg"],
+    images: ["images/incense/gaia-cover.webp"],
     weight: "0.4"
   }
 ];

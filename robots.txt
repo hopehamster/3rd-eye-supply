@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://3rdeyesupply.com/sitemap-index.xml
+Sitemap: https://hopehamster.github.io/3rd-eye-supply/sitemap-index.xml
 User-agent: *
 Allow: /
