@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://hopehamster.github.io/3rd-eye-supply/sitemap-index.xml
+User-agent: *
+Allow: /
