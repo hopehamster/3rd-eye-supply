@@ -1,0 +1,15 @@
+[
+  {"slug":"orgone-necklace-energy-16","name":"Orgone Energy Necklace","price":16,"img":"/images/orgone-jewelry/necklace_us_16__3_-cover.webp","type":"organite","shape":"pendant"},
+  {"slug":"orgone-necklace-healing-24","name":"Healing Orgone Necklace","price":24,"img":"/images/orgone-jewelry/necklace_us_24-cover.webp","type":"organite","shape":"pendant"},
+  {"slug":"orgone-necklace-protection-30","name":"Protection Orgone Necklace","price":30,"img":"/images/orgone-jewelry/necklace_us_30-cover.webp","type":"organite","shape":"pendant"},
+  {"slug":"orgone-necklace-premium-40","name":"Premium Orgone Necklace","price":40,"img":"/images/orgone-jewelry/necklace_us_40-cover.webp","type":"organite","shape":"pendant"},
+  {"slug":"golden-quartz-pyramid","name":"Golden Quartz Pyramid","price":55,"img":"/images/pyramids/img_5469-cover.webp","type":"organite","shape":"pyramid"},
+  {"slug":"amethyst-pyramid","name":"Amethyst Pyramid","price":65,"img":"/images/pyramids/img_5474-cover.webp","type":"organite","shape":"pyramid"},
+  {"slug":"black-tourmaline-pyramid","name":"Black Tourmaline Pyramid","price":60,"img":"/images/pyramids/img_5477-cover.webp","type":"organite","shape":"pyramid"},
+  {"slug":"clear-quartz-pyramid","name":"Clear Quartz Pyramid","price":50,"img":"/images/pyramids/img_5484-cover.webp","type":"organite","shape":"pyramid"},
+  {"slug":"floral-wood-ring","name":"Floral Wood Ring","price":25,"img":"/images/rings/img_6305-cover.webp","type":"organite","shape":"ring"},
+  {"slug":"green-agate-ring","name":"Green Agate Ring","price":30,"img":"/images/rings/img_6715-cover.webp","type":"organite","shape":"ring"},
+  {"slug":"crystal-statement-ring","name":"Crystal Statement Ring","price":35,"img":"/images/rings/img_6072-cover.webp","type":"organite","shape":"ring"}
+]
+
+

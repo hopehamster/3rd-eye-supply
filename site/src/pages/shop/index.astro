@@ -3,11 +3,11 @@ import Default from "../../layouts/Default.astro";
 import ProductGrid from "../../components/ProductGrid.astro";
 import productsAll from "../../data/products.json";
 
-const products = productsAll.filter((p) => p.type === "organite");
+const products = productsAll;
 ---
-<Default title="Organite">
+<Default title="Shop All">
   <section class="mx-auto max-w-6xl px-4 py-10">
-    <h1 class="text-3xl font-bold mb-6">Organite</h1>
+    <h1 class="text-3xl font-bold mb-6">Shop All</h1>
     <ProductGrid products={products} />
   </section>
 </Default>
