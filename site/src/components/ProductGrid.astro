@@ -1,9 +1,9 @@
 ---
-const { products } = Astro.props as { products: Array<{slug:string,name:string,price:number,img:string}> };
+const { products } = Astro.props as { products: Array<{slug:string,name:string,price:number,img:string,shape?:string}> };
 ---
 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
   {products.map((p) => (
-    <article class="group rounded-lg border border-white/10 bg-white/5 overflow-hidden">
+    <article class="group rounded-lg border border-white/10 bg-white/5 overflow-hidden" data-shape={p.shape || ''}>
       <a href={`/products/${p.slug}`} class="block">
         <img src={p.img} alt={p.name} class="aspect-square w-full object-cover group-hover:opacity-95" loading="lazy" width="600" height="600" />
       </a>

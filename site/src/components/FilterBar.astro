@@ -1,0 +1,29 @@
+---
+const shapes: string[] = Astro.props.shapes ?? ["all","pyramid","pendant","ring"];
+---
+<div class="mb-6 flex flex-wrap gap-2">
+  {shapes.map((s) => (
+    <button class="filter-btn rounded-full border border-white/20 px-3 py-1 text-sm hover:bg-white/10" data-shape={s}>{s[0].toUpperCase()+s.slice(1)}</button>
+  ))}
+</div>
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const cards = document.querySelectorAll<HTMLElement>("[data-shape]");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const val = btn.getAttribute("data-shape");
+      buttons.forEach(b=>b.classList.remove("bg-white/10"));
+      btn.classList.add("bg-white/10");
+      cards.forEach((el) => {
+        const shape = el.getAttribute("data-shape");
+        if (!val || val === "all") {
+          el.style.display = "";
+        } else {
+          el.style.display = shape === val ? "" : "none";
+        }
+      });
+    });
+  });
+</script>
+
+
