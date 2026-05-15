@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run preview:*)",
+      "Bash(npm install:*)",
+      "Bash(npm ci:*)",
+      "Bash(node:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote:*)",
+      "Bash(git ls-files:*)",
+      "Bash(git blame:*)",
+      "Bash(ls:*)",
+      "Bash(find site/public:*)",
+      "Bash(find site/src:*)",
+      "Bash(find oracle:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(file:*)",
+      "Bash(stat:*)",
+      "Bash(du:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wrangler whoami:*)",
+      "Bash(wrangler dev:*)",
+      "Bash(wrangler tail:*)",
+      "Bash(wrangler kv:namespace list:*)",
+      "Bash(wrangler deploy --dry-run:*)",
+      "Bash(wrangler vectorize list:*)",
+      "Read(./**)",
+      "Edit(site/**)",
+      "Edit(oracle/**)",
+      "Edit(.claude/**)",
+      "Edit(.github/**)",
+      "Write(site/**)",
+      "Write(oracle/**)",
+      "Write(.claude/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(wrangler secret put:*)",
+      "Bash(wrangler delete:*)",
+      "Bash(wrangler kv:namespace delete:*)",
+      "Read(./gcp-oauth.keys.json)",
+      "Read(./google-service-account-key.json)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)",
+      "Edit(./gcp-oauth.keys.json)",
+      "Edit(./google-service-account-key.json)",
+      "Edit(site/dist/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-tool-use-block-secret-exfil.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
