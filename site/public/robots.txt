@@ -1,5 +1,25 @@
 User-agent: *
 Allow: /
-Sitemap: https://hopehamster.github.io/3rd-eye-supply/sitemap-index.xml
-User-agent: *
+
+User-agent: GPTBot
 Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# AI manifest
+# https://3rdeyesupply.com/llms.txt
+
+Sitemap: https://3rdeyesupply.com/sitemap-index.xml

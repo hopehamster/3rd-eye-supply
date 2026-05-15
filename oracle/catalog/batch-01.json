@@ -1,0 +1,167 @@
+[
+  {
+    "file": "B0CBM9VD2X.txt",
+    "title": "Marketing by Human Design",
+    "author": "Juliette Stapleton",
+    "year": "2023",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Marketing approach informed by Human Design (an esoteric/new-age framework) for selling authentically.",
+    "reason": "Bridges metaphysical/Human Design framing with marketing — directly relevant to a metaphysical shop's persuasion voice."
+  },
+  {
+    "file": "B0CQ6T5KBY.txt",
+    "title": "Lean Marketing",
+    "author": "Lean Marketing (Allan Dib)",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Lean marketing principles for small business growth and customer acquisition.",
+    "reason": "Practical marketing/positioning fundamentals applicable to e-commerce oracle persuasion."
+  },
+  {
+    "file": "B0CW1MQZXP.txt",
+    "title": "The Belief Building Method (or similar)",
+    "author": "Billy Broas",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "Billy Broas's Belief Building framework — identifying customer existing/required beliefs to build marketing.",
+    "reason": "Canonical belief-chain marketing referenced in global rules; directly shapes oracle voice."
+  },
+  {
+    "file": "B0D4Q17V7L.txt",
+    "title": "Copywriting for Marketers",
+    "author": "Kaitlin Terry",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "copywriting",
+    "fit_for_oracle": "high",
+    "subject_summary": "Practical copywriting guide for B2C/B2B multichannel marketing.",
+    "reason": "Direct copywriting craft — core to oracle's persuasive output."
+  },
+  {
+    "file": "B0D9F3D5BK.txt",
+    "title": "Performance Marketing Mastery 2026",
+    "author": "unknown",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "A Meta/Google Ads beginner course handbook focused on paid-traffic mechanics.",
+    "reason": "Paid-ad operations, not relevant to an on-site metaphysical product oracle's persuasion voice."
+  },
+  {
+    "file": "B0DBV7RPP5.txt",
+    "title": "unknown",
+    "author": "unknown",
+    "year": "unknown",
+    "decision": "DROP",
+    "category": "corrupt-or-empty",
+    "fit_for_oracle": null,
+    "subject_summary": "Empty file (0 bytes).",
+    "reason": "File is 0 bytes — unreadable."
+  },
+  {
+    "file": "B0DCGCL8VL.txt",
+    "title": "Advanced Digital Marketing Strategies for Ecommerce",
+    "author": "Michael Wu",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "high",
+    "subject_summary": "9 mini master classes covering CRO, social, SEO, FB ads, email for ecommerce growth.",
+    "reason": "Directly addresses ecommerce conversion and loyalty tactics relevant to the metaphysical shop."
+  },
+  {
+    "file": "B0DF1V1DVF.txt",
+    "title": "Refuse to Be Irrelevant",
+    "author": "Lou Bortone",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "branding-storytelling",
+    "fit_for_oracle": "low",
+    "subject_summary": "AI + video system for personal-brand authority in the AI era.",
+    "reason": "Brand authority/visibility framing has tangential relevance; lower priority but on-topic."
+  },
+  {
+    "file": "B0DL3G1FJJ.txt",
+    "title": "Digital Marketing: The Success Guide",
+    "author": "Waldo's Publishing Company",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Generalist digital marketing guide covering SEO, social, email, AI, analytics.",
+    "reason": "Generic but covers digital marketing fundamentals — low-tier retrieval source."
+  },
+  {
+    "file": "B0DR588KNX.txt",
+    "title": "Social Media Marketing Secrets",
+    "author": "Scott M. Fraley",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Social media marketing playbook across major platforms for engagement and sales.",
+    "reason": "Tangential — social-media tactics have some bearing on shop's outreach voice."
+  },
+  {
+    "file": "B0DTNCH18Y.txt",
+    "title": "Audacious: How Humans Win in an AI Marketing World",
+    "author": "Mark W. Schaefer",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Argument for bold, human, story-driven marketing in the AI era.",
+    "reason": "Endorsed by Cialdini/Kotler/Berger; positioning + brand-voice principles useful for oracle."
+  },
+  {
+    "file": "B0DYB4KN24.txt",
+    "title": "LinkedIn Riches",
+    "author": "John Nemo",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "LinkedIn personal-brand and lead-generation playbook.",
+    "reason": "B2B LinkedIn lead-gen — not relevant to a metaphysical consumer e-commerce oracle."
+  },
+  {
+    "file": "B0F334JHDC.txt",
+    "title": "Visibility That Sells",
+    "author": "Juliette Stapleton",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Positioning and visibility framework for selling authentically.",
+    "reason": "Positioning craft from a Human-Design-adjacent author; aligned with metaphysical brand voice."
+  },
+  {
+    "file": "B0FBZK6TZS.txt",
+    "title": "Build Passive Income with AI",
+    "author": "Chuck Little",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "Generic AI-side-hustle/passive-income playbook.",
+    "reason": "Make-money-online genre, not focused on persuasion craft or metaphysics."
+  },
+  {
+    "file": "B0FCVBF92W.txt",
+    "title": "The Claude Playbook",
+    "author": "unknown (Fleuret)",
+    "year": "unknown",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Guide to using Claude (web, Code, API, MCP, automation).",
+    "reason": "Software/tooling reference, not relevant to metaphysical shop oracle content."
+  }
+]

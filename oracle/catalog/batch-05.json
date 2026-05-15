@@ -1,0 +1,134 @@
+[
+  {
+    "file": "B0GYGB8Z2K.txt",
+    "title": "Google Flow Guidebook (AI Filmmaking)",
+    "author": "Unknown",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Practical guide to Google Flow AI video generation tool.",
+    "reason": "AI video tooling, unrelated to metaphysical e-commerce persuasion."
+  },
+  {
+    "file": "B0GYHPZCVK.txt",
+    "title": "Mastering Artlist (AI Creator Ecosystem)",
+    "author": "Unknown",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Guide to Artlist AI image and video creation platform.",
+    "reason": "AI content creation tooling, unrelated to oracle scope."
+  },
+  {
+    "file": "B0GYKD3HY4.txt",
+    "title": "AI Video Automation Mastery",
+    "author": "M.H. Khan",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "AI video production, YouTube SEO, and monetization.",
+    "reason": "AI video/YouTube growth, not relevant to metaphysical persuasion oracle."
+  },
+  {
+    "file": "B0GYMFXJ44.txt",
+    "title": "The 24/7 Digital Workforce",
+    "author": "JDM",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "AI architect's guide to making money with AI agents.",
+    "reason": "General AI-business guide, not metaphysical or copywriting-focused."
+  },
+  {
+    "file": "breakthrough-advertising-schwartz-2004.txt",
+    "title": "Breakthrough Advertising",
+    "author": "Eugene Schwartz",
+    "year": "2004",
+    "decision": "KEEP",
+    "category": "copywriting",
+    "fit_for_oracle": "high",
+    "subject_summary": "Foundational direct-response copywriting on awareness stages and market sophistication.",
+    "reason": "Core copywriting canon — awareness stages directly inform oracle persuasion logic."
+  },
+  {
+    "file": "cashvertising-whitman.txt",
+    "title": "Cashvertising",
+    "author": "Drew Eric Whitman",
+    "year": "2009",
+    "decision": "KEEP",
+    "category": "sales-psychology",
+    "fit_for_oracle": "high",
+    "subject_summary": "Ad-agency psychology techniques including the Life Force 8 desires.",
+    "reason": "Direct ad-psychology toolkit highly applicable to oracle product recommendations."
+  },
+  {
+    "file": "hooked-eyal-hoover.txt",
+    "title": "Hooked: How to Build Habit-Forming Products",
+    "author": "Nir Eyal with Ryan Hoover",
+    "year": "2014",
+    "decision": "KEEP",
+    "category": "consumer-psychology",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Trigger-Action-Reward-Investment model for habit-forming product design.",
+    "reason": "Behavioral psychology useful for engagement and conversion patterns in oracle UX."
+  },
+  {
+    "file": "lean-startup-ries.txt",
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "year": "2011",
+    "decision": "DROP",
+    "category": "generic-leadership",
+    "fit_for_oracle": null,
+    "subject_summary": "Validated learning and pivot/persevere methodology for startups.",
+    "reason": "Startup methodology, not persuasion or metaphysics."
+  },
+  {
+    "file": "mom-test-fitzpatrick.txt",
+    "title": "The Mom Test",
+    "author": "Rob Fitzpatrick",
+    "year": "2013",
+    "decision": "DROP",
+    "category": "generic-leadership",
+    "fit_for_oracle": null,
+    "subject_summary": "How to interview customers without bias to validate business ideas.",
+    "reason": "Customer-discovery interviewing, not directly relevant to oracle persuasion."
+  },
+  {
+    "file": "obviously-awesome-dunford.txt",
+    "title": "Obviously Awesome",
+    "author": "April Dunford",
+    "year": "2019",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "Step-by-step framework for product positioning in market categories.",
+    "reason": "Positioning framework directly informs how the oracle frames products to seekers."
+  },
+  {
+    "file": "positioning-ries-trout.txt",
+    "title": "Positioning: The Battle for Your Mind",
+    "author": "Al Ries and Jack Trout",
+    "year": "1981",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "Classic positioning theory — placing a product in the prospect's mind.",
+    "reason": "Foundational positioning canon directly applicable to oracle product framing."
+  },
+  {
+    "file": "sifter-cc-llms.txt",
+    "title": "Sifter llms.txt",
+    "author": "Mike Bradley",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "LLM-readable description of the Sifter proximity chat app.",
+    "reason": "Belongs to the Sifter project, not metaphysical oracle scope."
+  }
+]

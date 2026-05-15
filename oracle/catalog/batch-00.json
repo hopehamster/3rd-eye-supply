@@ -1,0 +1,167 @@
+[
+  {
+    "file": "22-immutable-laws-of-marketing-ries-trout.txt",
+    "title": "The 22 Immutable Laws of Marketing",
+    "author": "Al Ries and Jack Trout",
+    "year": "1993",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "canonical positioning laws (leadership, category, mind, perception, focus)",
+    "reason": "foundational positioning canon directly informs how the oracle frames products and categories"
+  },
+  {
+    "file": "B007L50HE6.txt",
+    "title": "500 Social Media Marketing Tips",
+    "author": "Andrew Macarthy",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "tactical social media playbook across platforms",
+    "reason": "tactical channel tips, low persona-shaping value but usable retrieval source"
+  },
+  {
+    "file": "B00F9FL3U2.txt",
+    "title": "Be a Sales Superstar",
+    "author": "Brian Tracy",
+    "year": "unknown",
+    "decision": "KEEP",
+    "category": "sales-psychology",
+    "fit_for_oracle": "medium",
+    "subject_summary": "21 ways to sell more in tough markets",
+    "reason": "classic sales psychology, useful for closing language and objection handling"
+  },
+  {
+    "file": "B00G056L84.txt",
+    "title": "Rock Your Network Marketing Business",
+    "author": "Sarah Robbins",
+    "year": "2013",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "network marketing / MLM team-building advice",
+    "reason": "MLM operations focus, not relevant to e-commerce oracle persuasion"
+  },
+  {
+    "file": "B00NH0XZR0.txt",
+    "title": "SEO 2026: Learn Search Engine Optimization",
+    "author": "Adam Clarke",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "low",
+    "subject_summary": "SEO and search marketing strategies",
+    "reason": "tangential — relevant to driving traffic to shop but not oracle voice"
+  },
+  {
+    "file": "B01BKS3VFG.txt",
+    "title": "How to Write Copy That Sells",
+    "author": "Ray Edwards",
+    "year": "unknown",
+    "decision": "KEEP",
+    "category": "copywriting",
+    "fit_for_oracle": "high",
+    "subject_summary": "PASTOR framework, headline templates, direct-response copywriting",
+    "reason": "canonical direct-response copywriting source named in user's global rules"
+  },
+  {
+    "file": "B083KP37KB.txt",
+    "title": "How to Get to the Top of Google",
+    "author": "Tim Cameron-Kitchen / Exposure Ninja",
+    "year": "2024",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "low",
+    "subject_summary": "plain-English SEO guide",
+    "reason": "tangential SEO traffic value, low fit for oracle voice"
+  },
+  {
+    "file": "B085XNKHMB.txt",
+    "title": "Business Made Simple",
+    "author": "Donald Miller",
+    "year": "2021",
+    "decision": "KEEP",
+    "category": "branding-storytelling",
+    "fit_for_oracle": "high",
+    "subject_summary": "StoryBrand-adjacent business framework, guide-not-hero positioning",
+    "reason": "StoryBrand canon explicitly cited in user's copywriting canon — persona-defining"
+  },
+  {
+    "file": "B08BYZXR27.txt",
+    "title": "Quantum Marketing",
+    "author": "Raja Rajamannar",
+    "year": "2021",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "future of marketing under AI/data paradigm shift",
+    "reason": "strategic marketing perspective, useful retrieval source"
+  },
+  {
+    "file": "B08GG8TS23.txt",
+    "title": "Strategic Marketing",
+    "author": "Anthony Atkins",
+    "year": "unknown",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "strategic marketing planning steps and digital strategies",
+    "reason": "generic overview of strategic marketing; usable but not persona-defining"
+  },
+  {
+    "file": "B0BXJYNV28.txt",
+    "title": "Email Marketing Rules (Frameworks volume)",
+    "author": "Chad S. White",
+    "year": "unknown",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "medium",
+    "subject_summary": "email marketing frameworks, lifecycle, segmentation, subject lines",
+    "reason": "useful for shop email/newsletter copy and funnel patterns"
+  },
+  {
+    "file": "B0BXJYZNTG.txt",
+    "title": "Email Marketing Rules (Rules volume)",
+    "author": "Chad S. White",
+    "year": "unknown",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "medium",
+    "subject_summary": "email marketing must-follow and recommended rules",
+    "reason": "companion volume — same rationale as the frameworks volume"
+  },
+  {
+    "file": "B0BZN29C99.txt",
+    "title": "How to Start Your Social Media Marketing Campaign with as Little as $5",
+    "author": "Chime Publishing",
+    "year": "2023",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "low-budget social campaign tactics",
+    "reason": "tactical low-budget social — note: contains the $5/day anti-pattern flagged in user rules; usable as cautionary retrieval"
+  },
+  {
+    "file": "B0C5N8BDCL.txt",
+    "title": "Walt's Way",
+    "author": "Andrew Lock",
+    "year": "2023",
+    "decision": "KEEP",
+    "category": "branding-storytelling",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Disney-inspired marketing and customer experience strategies",
+    "reason": "brand experience and premium-pricing storytelling lessons applicable to a metaphysical shop"
+  },
+  {
+    "file": "B0C6N165NH.txt",
+    "title": "Oversubscribed (Scorecard Marketing)",
+    "author": "Daniel Priestley and Glen Carlson",
+    "year": "2023",
+    "decision": "KEEP",
+    "category": "sales-psychology",
+    "fit_for_oracle": "high",
+    "subject_summary": "psychological tension, dormant desires, scorecard lead generation",
+    "reason": "directly addresses why people buy and how to awaken desire — strong oracle persuasion source"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "file": "B0FF3JNMPK.txt",
+    "title": "Veo 3 Prompt Mastery",
+    "author": "Unknown",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Guide to AI video generation with Google's Veo 3 model.",
+    "reason": "AI video tooling, not relevant to metaphysical shop persuasion oracle."
+  },
+  {
+    "file": "B0FHDQ62YJ.txt",
+    "title": "Unknown",
+    "author": "Unknown",
+    "year": "Unknown",
+    "decision": "DROP",
+    "category": "corrupt-or-empty",
+    "fit_for_oracle": null,
+    "subject_summary": "Empty file (0 bytes).",
+    "reason": "File is empty and unreadable."
+  },
+  {
+    "file": "B0FKJ92DLX.txt",
+    "title": "Digital Marketing Roadmap",
+    "author": "Cameron Banks",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Broad digital marketing primer covering SEO, content, social, email, and PPC for small business.",
+    "reason": "General marketing strategy that lightly touches conversion-relevant channels for an e-commerce oracle."
+  },
+  {
+    "file": "B0FLZQZX2N.txt",
+    "title": "Digital Marketing Made Simple",
+    "author": "Dr Barry Knowles",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "low",
+    "subject_summary": "Step-by-step digital marketing strategies for traffic, online presence, and AI-assisted customer acquisition.",
+    "reason": "Covers website conversion design and traffic acquisition relevant to e-commerce funnels."
+  },
+  {
+    "file": "B0FN7YFZZR.txt",
+    "title": "Claude Code Mastery",
+    "author": "Eslam Wahba",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Technical engineering playbook for using Claude AI in software development.",
+    "reason": "Software engineering content unrelated to metaphysical commerce."
+  },
+  {
+    "file": "B0FND9684V.txt",
+    "title": "Nostalgia Marketing",
+    "author": "Dimitris Ioannou",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "branding-storytelling",
+    "fit_for_oracle": "high",
+    "subject_summary": "Framework for building memorable brands by leveraging nostalgia psychology, sensory identity, and story.",
+    "reason": "Sensory branding and storytelling psychology directly applicable to metaphysical brand voice."
+  },
+  {
+    "file": "B0FNWVX417.txt",
+    "title": "1000 Creative Prompts for Video Generation Models",
+    "author": "Abdelbasset Daly",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Prompt library and craft guide for AI video generation tools.",
+    "reason": "AI video prompting, unrelated to oracle's persuasion or metaphysical scope."
+  },
+  {
+    "file": "B0FRBXVXFM.txt",
+    "title": "AI for Marketing Playbook",
+    "author": "Brian Duvall",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Strategies for automating marketing systems, optimizing campaigns, and scaling outreach with AI.",
+    "reason": "Marketing automation and campaign optimization with some relevance to e-commerce growth."
+  },
+  {
+    "file": "B0FRQ3JBCN.txt",
+    "title": "The AI Agent Blueprint",
+    "author": "Alexander J. Daniels",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Practical playbook for building agentic AI agents.",
+    "reason": "AI agent engineering content, not persuasion or metaphysics."
+  },
+  {
+    "file": "B0FRT2YH69.txt",
+    "title": "Perception Is Power (Positioning)",
+    "author": "Pedro Martins",
+    "year": "2025",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "Positioning and perception book on how the stories people tell shape buying decisions.",
+    "reason": "Core positioning and symptom-framing principles directly applicable to oracle persuasion."
+  },
+  {
+    "file": "B0FXCF55GS.txt",
+    "title": "The Content Machine",
+    "author": "Unknown",
+    "year": "2025",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "Hype-driven manifesto on using AI to mass-produce social content for views and money.",
+    "reason": "Hype/get-rich content with no substantive persuasion or metaphysical material."
+  },
+  {
+    "file": "B0GDZHV63Q.txt",
+    "title": "Mastering AI Agents: A Beginner's Guide",
+    "author": "Unknown",
+    "year": "Unknown",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "No-code guide to building AI agents for small business automation.",
+    "reason": "AI agent tooling for business automation, not oracle-relevant."
+  },
+  {
+    "file": "B0GGC7MZL8.txt",
+    "title": "Meta Ads for Beginners (2026)",
+    "author": "Unknown",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "copywriting",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Beginner Meta ads guide covering audiences, creative, copywriting, budgeting, and metrics.",
+    "reason": "Includes copywriting-that-converts and creative chapters useful for ad-style oracle persuasion."
+  },
+  {
+    "file": "B0GGZ9JS77.txt",
+    "title": "Higgsfield AI Mastery",
+    "author": "Unknown",
+    "year": "Unknown",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Manual for the Higgsfield AI generative video and image platform.",
+    "reason": "AI visual tooling guide, unrelated to oracle scope."
+  },
+  {
+    "file": "B0GHP9WYH5.txt",
+    "title": "The $20 Agency: How to Replace Your $1,000/Month Agency with AI",
+    "author": "J.A. Watte",
+    "year": "Unknown",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Guide to replacing marketing agencies with a low-cost AI-driven SEO and marketing stack.",
+    "reason": "Practical SEO and marketing-stack tactics with some applicability to e-commerce traffic and conversion."
+  }
+]

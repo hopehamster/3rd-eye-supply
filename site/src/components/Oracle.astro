@@ -1,0 +1,407 @@
+---
+/**
+ * Oracle.astro — the chat island.
+ *
+ * Self-contained: dark, metaphysical aesthetic. No frameworks.
+ * Vanilla JS hydration via /src/scripts/oracle-client.js (loaded as a module).
+ *
+ * Tailwind classes are used per astro.config.mjs (tailwind integration).
+ * No external chat-UI libraries. No npm additions.
+ */
+const base = import.meta.env.BASE_URL || '/';
+// Build the script URL relative to the site base path so it works under /3rd-eye-supply on GH Pages
+// AND under / on the custom domain.
+---
+
+<section
+  class="oracle-root mx-auto w-full max-w-[720px] px-4 sm:px-6 py-8 sm:py-12"
+  aria-label="Oracle conversation"
+>
+  <!-- Avatar zone -->
+  <!-- TODO: replace with Lottie when avatar art lands -->
+  <div class="flex justify-center mb-6 sm:mb-8" aria-hidden="true">
+    <div class="oracle-eye relative">
+      <div class="oracle-eye__halo"></div>
+      <div class="oracle-eye__iris"></div>
+      <div class="oracle-eye__pupil"></div>
+      <div class="oracle-eye__shine"></div>
+    </div>
+  </div>
+
+  <!-- Threshold whisper (initial state copy, fades when first message lands) -->
+  <p
+    id="oracle-threshold"
+    class="text-center text-white/60 italic text-sm sm:text-base mb-6 sm:mb-8 transition-opacity duration-700"
+  >
+    the oracle waits. ask what you wish to know.
+  </p>
+
+  <!-- Conversation history -->
+  <div
+    id="oracle-history"
+    class="oracle-history flex flex-col gap-4 mb-4 min-h-[160px] sm:min-h-[240px] max-h-[58vh] overflow-y-auto pr-1"
+    role="log"
+    aria-live="polite"
+    aria-relevant="additions text"
+    aria-label="Oracle conversation history"
+  ></div>
+
+  <!-- Contemplating indicator -->
+  <div
+    id="oracle-thinking"
+    class="oracle-thinking text-center text-white/50 text-sm italic mb-3 hidden"
+    aria-live="polite"
+  >
+    the oracle is contemplating
+    <span class="oracle-pulse" aria-hidden="true"></span>
+  </div>
+
+  <!-- Soft inline error / notice slot -->
+  <div
+    id="oracle-notice"
+    class="oracle-notice text-center text-amber-200/80 text-sm mb-3 hidden"
+    role="status"
+  ></div>
+
+  <!-- Input zone -->
+  <form id="oracle-form" class="oracle-form flex items-end gap-2 sm:gap-3" autocomplete="off">
+    <label for="oracle-input" class="sr-only">Ask the Oracle</label>
+    <textarea
+      id="oracle-input"
+      name="query"
+      rows="1"
+      maxlength="1000"
+      placeholder="ask the oracle…"
+      class="oracle-input flex-1 resize-none rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:border-purple-400/50 focus:bg-white/[0.07] transition"
+      aria-label="Your question for the Oracle"
+    ></textarea>
+    <button
+      type="submit"
+      id="oracle-send"
+      class="oracle-send shrink-0 rounded-full bg-gradient-to-br from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 disabled:opacity-40 disabled:cursor-not-allowed px-5 py-3 text-sm font-medium tracking-wide text-white transition"
+      aria-label="Send question to the Oracle"
+    >
+      Ask
+    </button>
+  </form>
+
+  <!-- Voice controls -->
+  <div class="mt-4 flex items-center justify-between text-xs text-white/40">
+    <label class="inline-flex items-center gap-2 cursor-pointer select-none">
+      <input
+        id="oracle-voice-toggle"
+        type="checkbox"
+        class="oracle-voice-toggle accent-purple-400 align-middle"
+      />
+      <span>voice</span>
+    </label>
+    <audio
+      id="oracle-audio"
+      preload="none"
+      controls
+      class="oracle-audio hidden sm:block max-w-[60%]"
+      aria-label="Oracle voice playback"
+    ></audio>
+  </div>
+</section>
+
+<style>
+  /* -------------------------------------------------- *
+   * Oracle visual signature.
+   * Dark, metaphysical, no whimsy. Slow pulses only.
+   * -------------------------------------------------- */
+  .oracle-root {
+    color: rgba(255,255,255,0.92);
+  }
+
+  /* The eye: concentric circles, purple/indigo gradient, slow pulse. */
+  .oracle-eye {
+    width: 96px;
+    height: 96px;
+    position: relative;
+  }
+  @media (min-width: 640px) {
+    .oracle-eye { width: 128px; height: 128px; }
+  }
+  .oracle-eye__halo,
+  .oracle-eye__iris,
+  .oracle-eye__pupil,
+  .oracle-eye__shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+  }
+  .oracle-eye__halo {
+    background: radial-gradient(closest-side, rgba(167,139,250,0.35), rgba(99,102,241,0.15) 60%, rgba(0,0,0,0) 75%);
+    filter: blur(6px);
+    animation: oracle-halo 6s ease-in-out infinite;
+  }
+  .oracle-eye__iris {
+    inset: 12%;
+    background: conic-gradient(from 200deg, #4c1d95, #6d28d9, #4338ca, #312e81, #4c1d95);
+    box-shadow:
+      inset 0 0 16px rgba(0,0,0,0.55),
+      0 0 28px rgba(139,92,246,0.18);
+    animation: oracle-iris 14s linear infinite;
+  }
+  .oracle-eye__pupil {
+    inset: 36%;
+    background: radial-gradient(circle at 40% 35%, #1e1b4b, #000 75%);
+    box-shadow:
+      inset 0 0 6px rgba(0,0,0,0.9),
+      0 0 12px rgba(167,139,250,0.35);
+    animation: oracle-pupil 5s ease-in-out infinite;
+  }
+  .oracle-eye__shine {
+    inset: 38%;
+    background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0) 45%);
+    pointer-events: none;
+  }
+
+  @keyframes oracle-halo {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.06); }
+  }
+  @keyframes oracle-iris {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes oracle-pupil {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(0.94); }
+  }
+
+  /* Thinking pulse — three dots done as a single soft fade, not bouncing. */
+  .oracle-pulse {
+    display: inline-block;
+    width: 28px;
+    text-align: left;
+    letter-spacing: 2px;
+  }
+  .oracle-pulse::after {
+    content: '·';
+    animation: oracle-pulse-dots 2.4s steps(4, end) infinite;
+  }
+  @keyframes oracle-pulse-dots {
+    0%   { content: '·'; }
+    25%  { content: '· ·'; }
+    50%  { content: '· · ·'; }
+    75%  { content: '· ·'; }
+    100% { content: '·'; }
+  }
+
+  /* Conversation bubbles. Inscribed-not-typed feel. */
+  .oracle-msg {
+    max-width: 88%;
+    line-height: 1.65;
+    font-size: 0.98rem;
+    border-radius: 16px;
+    padding: 12px 16px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    animation: oracle-fade-in 600ms ease-out both;
+  }
+  .oracle-msg--seeker {
+    align-self: flex-end;
+    background: rgba(99, 102, 241, 0.18);
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    color: rgba(255,255,255,0.92);
+  }
+  .oracle-msg--oracle {
+    align-self: flex-start;
+    background: linear-gradient(180deg, rgba(76, 29, 149, 0.22), rgba(30, 27, 75, 0.18));
+    border: 1px solid rgba(167, 139, 250, 0.22);
+    color: rgba(255,255,255,0.96);
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.08);
+    font-style: italic;
+    white-space: pre-wrap;
+  }
+
+  /* Token streaming reveal: a soft fade applied per character via wrapper spans */
+  .oracle-msg--oracle .oracle-token {
+    opacity: 0;
+    animation: oracle-token-in 280ms ease-out forwards;
+  }
+
+  @keyframes oracle-fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes oracle-token-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Scrollbar — thin, dark. */
+  .oracle-history::-webkit-scrollbar { width: 6px; }
+  .oracle-history::-webkit-scrollbar-track { background: transparent; }
+  .oracle-history::-webkit-scrollbar-thumb {
+    background: rgba(167,139,250,0.18);
+    border-radius: 9999px;
+  }
+
+  /* Input glow — a touch of purple on focus. */
+  .oracle-input:focus {
+    box-shadow: 0 0 0 1px rgba(167,139,250,0.35), 0 0 24px rgba(139,92,246,0.18);
+  }
+
+  /* Reduced motion: kill the orbits and pulses. */
+  @media (prefers-reduced-motion: reduce) {
+    .oracle-eye__halo,
+    .oracle-eye__iris,
+    .oracle-eye__pupil,
+    .oracle-pulse::after,
+    .oracle-msg,
+    .oracle-msg--oracle .oracle-token {
+      animation: none !important;
+    }
+    .oracle-msg--oracle .oracle-token { opacity: 1; }
+  }
+</style>
+
+<script type="module" define:vars={{ baseUrl: base }}>
+  // Astro builds emit the Oracle client as a sibling JS asset; we import it
+  // through a relative module path that Vite/Astro will resolve at build time.
+  import { OracleClient } from '../scripts/oracle-client.js';
+
+  const $history   = document.getElementById('oracle-history');
+  const $threshold = document.getElementById('oracle-threshold');
+  const $thinking  = document.getElementById('oracle-thinking');
+  const $notice    = document.getElementById('oracle-notice');
+  const $form      = document.getElementById('oracle-form');
+  const $input     = document.getElementById('oracle-input');
+  const $send      = document.getElementById('oracle-send');
+  const $voice     = document.getElementById('oracle-voice-toggle');
+  const $audio     = document.getElementById('oracle-audio');
+
+  if (!$history || !$form || !$input) return;
+
+  let currentOracleBubble = null;
+
+  function showNotice(text) {
+    if (!$notice) return;
+    $notice.textContent = text;
+    $notice.classList.remove('hidden');
+  }
+  function clearNotice() {
+    if (!$notice) return;
+    $notice.textContent = '';
+    $notice.classList.add('hidden');
+  }
+
+  function appendSeekerBubble(text) {
+    const div = document.createElement('div');
+    div.className = 'oracle-msg oracle-msg--seeker';
+    div.textContent = text;
+    $history.appendChild(div);
+    scrollToBottom();
+  }
+
+  function startOracleBubble() {
+    const div = document.createElement('div');
+    div.className = 'oracle-msg oracle-msg--oracle';
+    // Live region: aria-live polite already applied to the parent; this is a child.
+    $history.appendChild(div);
+    currentOracleBubble = div;
+    scrollToBottom();
+  }
+
+  function appendTokenToOracleBubble(delta) {
+    if (!currentOracleBubble) startOracleBubble();
+    // Inscribe one span per character so each fades in subtly. Cheap.
+    const frag = document.createDocumentFragment();
+    for (const ch of delta) {
+      const s = document.createElement('span');
+      s.className = 'oracle-token';
+      s.textContent = ch;
+      frag.appendChild(s);
+    }
+    currentOracleBubble.appendChild(frag);
+    scrollToBottom();
+  }
+
+  function scrollToBottom() {
+    // RAF to avoid layout thrash mid-stream.
+    requestAnimationFrame(() => {
+      $history.scrollTop = $history.scrollHeight;
+    });
+  }
+
+  function autoresize() {
+    $input.style.height = 'auto';
+    $input.style.height = Math.min($input.scrollHeight, 180) + 'px';
+  }
+  $input.addEventListener('input', autoresize);
+
+  // Submit on Enter (without Shift). Shift+Enter inserts a newline.
+  $input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      $form.requestSubmit();
+    }
+  });
+
+  const client = new OracleClient({
+    onTurnStart: () => {
+      clearNotice();
+      if ($threshold) $threshold.style.opacity = '0';
+      $thinking.classList.remove('hidden');
+      $send.disabled = true;
+      currentOracleBubble = null;
+    },
+    onTokenAppend: (delta) => {
+      // First token: hide thinking, start bubble.
+      if (!currentOracleBubble) {
+        $thinking.classList.add('hidden');
+        startOracleBubble();
+      }
+      appendTokenToOracleBubble(delta);
+    },
+    onTurnComplete: () => {
+      $thinking.classList.add('hidden');
+      $send.disabled = false;
+      $input.focus();
+    },
+    onVoiceReady: (_url) => {
+      // Audio element src is set by the client when voice is on.
+    },
+    onError: (msg) => {
+      $thinking.classList.add('hidden');
+      $send.disabled = false;
+      // Drop any half-built oracle bubble — it's incomplete and would mislead.
+      if (currentOracleBubble && !currentOracleBubble.textContent.trim()) {
+        currentOracleBubble.remove();
+      }
+      currentOracleBubble = null;
+      showNotice(msg);
+    },
+    onState: (_s) => { /* reserved for future UI state */ }
+  });
+
+  client.attachAudioElement($audio);
+  client.init();
+
+  // Voice toggle: hydrate from stored pref.
+  if ($voice) {
+    $voice.checked = client.isVoiceOn();
+    $voice.addEventListener('change', () => client.setVoiceOn($voice.checked));
+  }
+
+  $form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = ($input.value || '').trim();
+    if (!q) return;
+    if (client.inFlight) return;
+
+    appendSeekerBubble(q);
+    $input.value = '';
+    autoresize();
+
+    await client.send(q);
+  });
+
+  // Initial focus on desktop only (avoid forcing the keyboard up on phones).
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    setTimeout(() => $input.focus(), 200);
+  }
+</script>

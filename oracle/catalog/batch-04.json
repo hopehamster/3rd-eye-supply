@@ -1,0 +1,167 @@
+[
+  {
+    "file": "B0GWRGRMGF.txt",
+    "title": "AI for Marketing",
+    "author": "Arthur Intellian",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Practical AI workflows for marketing tasks including customer research, copywriting, and offer sharpening.",
+    "reason": "Covers customer pains/desires/objections mapping and copy generation usable by oracle persuasion."
+  },
+  {
+    "file": "B0GWW8CXRQ.txt",
+    "title": "Digital Marketing from Zero",
+    "author": "Chris Walker",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Beginner mentor-style guide to digital marketing income paths, content, traffic, SEO, and monetization.",
+    "reason": "General digital marketing primer with some applicable funnel/content tactics."
+  },
+  {
+    "file": "B0GWXJQ6SF.txt",
+    "title": "The No-BS Guide to AI for Trading & Market Research",
+    "author": "Ash Cole",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "finance-investing",
+    "fit_for_oracle": null,
+    "subject_summary": "Using AI tools for stock trading, market analysis, and financial research.",
+    "reason": "Finance/trading focus with no metaphysical or persuasion relevance."
+  },
+  {
+    "file": "B0GWXTVSDW.txt",
+    "title": "Unknown",
+    "author": "Unknown",
+    "year": "Unknown",
+    "decision": "DROP",
+    "category": "corrupt-or-empty",
+    "fit_for_oracle": null,
+    "subject_summary": "File contains only one line; effectively empty.",
+    "reason": "File too short to extract meaningful content."
+  },
+  {
+    "file": "B0GX2VZGCT.txt",
+    "title": "AI For Content Creators",
+    "author": "Unknown",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "AI tools and workflows for YouTube, TikTok, and blog content creators.",
+    "reason": "Content creator productivity focus, not sales psychology or metaphysics."
+  },
+  {
+    "file": "B0GX2XNK2K.txt",
+    "title": "50 AI Agents You Can Copy and Deploy Today",
+    "author": "Andrew Grabiec",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Templates for AI agents covering marketing, sales, ops, and customer support automation.",
+    "reason": "Agent engineering recipes; not directly persuasion canon for oracle."
+  },
+  {
+    "file": "B0GX2YKZGS.txt",
+    "title": "Digital Marketing Strategies for Small Businesses in 2026",
+    "author": "Unknown",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Lean small-business digital marketing playbook covering personas, content, ads, email, and analytics.",
+    "reason": "Buyer persona and audience research framing translates to oracle product-matching."
+  },
+  {
+    "file": "B0GX2YMSML.txt",
+    "title": "AI Meta Ads Advanced In Hindi 2026 Edition",
+    "author": "Unknown",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": null,
+    "subject_summary": "Hindi-language Meta Ads playbook covering setup, targeting, scaling, and AI tools.",
+    "reason": "Language barrier and Meta-Ads-specific scope make it low-yield for oracle persuasion corpus."
+  },
+  {
+    "file": "B0GX33VX3F.txt",
+    "title": "When AI Works as a Team: Multi-Agent Collaboration in LLMs",
+    "author": "Unknown",
+    "year": "2025-2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Survey of multi-agent collaboration research papers in large language models.",
+    "reason": "AI research subject, no relevance to metaphysics or sales copy."
+  },
+  {
+    "file": "B0GX5B8X42.txt",
+    "title": "AI Podcast Video Earning Blueprint",
+    "author": "Unknown",
+    "year": "Unknown",
+    "decision": "DROP",
+    "category": "self-help-generic",
+    "fit_for_oracle": null,
+    "subject_summary": "Smartphone-based passive income guide using AI to make podcast videos.",
+    "reason": "Make-money-online template, not persuasion or metaphysics."
+  },
+  {
+    "file": "B0GX75V8RD.txt",
+    "title": "Agentic AI Engineering with Claude Code and MCP",
+    "author": "Cole Langford",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Engineering production AI agents with Claude Code, MCP, and multi-agent systems.",
+    "reason": "Technical AI engineering, unrelated to oracle's persuasion or metaphysics scope."
+  },
+  {
+    "file": "B0GXB3C6D6.txt",
+    "title": "ASCenso AI Framework: 7-Step System to Scale Meta Ads Without Getting Banned",
+    "author": "Reinel Bonora",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Seven-step Meta Ads framework spanning setup, creative testing, scaling, and reactivation.",
+    "reason": "Creative testing and copy frameworks transferable to oracle persuasion patterns."
+  },
+  {
+    "file": "B0GXHX5FPD.txt",
+    "title": "Automated YouTube Video Generation with Python, ChatGPT & AI Image Animation",
+    "author": "Narendra Mohan Prasad",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "End-to-end Python pipeline to generate YouTube videos with AI.",
+    "reason": "Programming pipeline tutorial, no persuasion or metaphysics."
+  },
+  {
+    "file": "B0GXZRWS8V.txt",
+    "title": "The Complete Guide to High-Performing Marketing Systems",
+    "author": "Unknown",
+    "year": "Unknown",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Systems blueprint for traffic, lead capture, nurture sequences, and conversion engines.",
+    "reason": "Funnel and email-nurture systems map directly to oracle conversion guidance."
+  },
+  {
+    "file": "B0GYFT7PZX.txt",
+    "title": "Mastering Meta Andromeda",
+    "author": "Vikram Wadkar",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "How Meta's Andromeda algorithm changes targeting, creative strategy, and campaign performance.",
+    "reason": "Already core canon for the persuasion/creative-as-targeting model used in oracle ad work."
+  }
+]

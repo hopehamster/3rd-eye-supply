@@ -1,0 +1,151 @@
+---
+/**
+ * /oracle — dedicated route for the Oracle chat.
+ *
+ * Wraps the Oracle island in the existing site nav + footer chrome.
+ * Adds a lightweight pure-CSS starfield background — ambient, no JS,
+ * no Three.js dependency (we promised: no new npm packages).
+ */
+import Oracle from '../components/Oracle.astro';
+const base = import.meta.env.BASE_URL || '/';
+const baseTrim = base.endsWith('/') ? base : base + '/';
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ask the Oracle — 3rd Eye Supply</title>
+    <meta name="theme-color" content="#1e1b4b" />
+    <meta
+      name="description"
+      content="Speak with the 3rd Eye Supply Oracle — a quiet guide for grounding, shielding, and choosing the right crystal or orgonite piece for your space. Ask anything; the answer comes without rush."
+    />
+    <meta property="og:title" content="Ask the Oracle — 3rd Eye Supply" />
+    <meta
+      property="og:description"
+      content="A quiet, wise voice for those who want to be steadier. Ask the Oracle about crystals, orgonite, breath, and the corner of the room you've been avoiding."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-black text-white min-h-screen flex flex-col">
+    <!-- Ambient starfield (CSS only). -->
+    <div class="oracle-stars" aria-hidden="true">
+      <div class="oracle-stars__layer oracle-stars__layer--1"></div>
+      <div class="oracle-stars__layer oracle-stars__layer--2"></div>
+      <div class="oracle-stars__layer oracle-stars__layer--3"></div>
+      <div class="oracle-stars__veil"></div>
+    </div>
+
+    <!-- Match existing site nav (replicated, not refactored — surgical). -->
+    <nav class="w-full sticky top-0 z-40 bg-black/70 backdrop-blur border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href={baseTrim} class="text-lg font-semibold tracking-wide">3rd Eye Supply</a>
+        <ul class="hidden md:flex items-center gap-6">
+          <li><a class="text-sm text-white/90 hover:text-white" href={baseTrim}>Home</a></li>
+          <li><a class="text-sm text-white/90 hover:text-white" href={baseTrim + 'shop'}>Shop</a></li>
+          <li><a class="text-sm text-purple-200 hover:text-white" href={baseTrim + 'oracle'}>Oracle</a></li>
+          <li><a class="text-sm text-white/90 hover:text-white" href={baseTrim + 'category/pyramids'}>Pyramids</a></li>
+          <li><a class="text-sm text-white/90 hover:text-white" href={baseTrim + 'category/angels'}>Angels</a></li>
+        </ul>
+        <a
+          href="#"
+          class="snipcart-checkout inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium hover:bg-indigo-500"
+        >
+          Cart
+        </a>
+      </div>
+    </nav>
+
+    <main class="flex-1 relative z-10">
+      <section class="bg-gradient-to-b from-purple-950/40 via-indigo-950/30 to-black/0">
+        <div class="mx-auto max-w-3xl px-4 pt-10 pb-2 text-center">
+          <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Ask the Oracle</h1>
+          <p class="mt-3 text-white/65 text-sm md:text-base italic max-w-xl mx-auto">
+            a quiet voice at the threshold. answers come without hurry, without selling.
+          </p>
+        </div>
+        <Oracle />
+        <div class="mx-auto max-w-3xl px-4 pb-16 text-center text-xs text-white/35">
+          <p>
+            the oracle is a guide, not a doctor or therapist.
+            in a crisis, please reach
+            <a class="underline decoration-white/30 hover:text-white" href="tel:988">988</a>
+            or
+            <a class="underline decoration-white/30 hover:text-white" href="tel:911">911</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-8 border-t border-white/10 bg-black/60 relative z-10">
+      <div class="mx-auto max-w-6xl px-4 py-10 text-center text-sm text-white/70">
+        <p>
+          Contact:
+          <a class="underline" href="mailto:support@3rdeyesupply.com">support@3rdeyesupply.com</a>
+        </p>
+        <p class="mt-2">© 2026 3rd Eye Supply. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Snipcart parity with the rest of the site (so Cart button works on this route). -->
+    <div
+      id="snipcart"
+      hidden
+      data-api-key="NmEzNGJkYjMtZWRlYS00NDIyLWE3MjktZWNjNzZlYzYyMzk2NjM4ODA4MzQ5NDA4MzExMTQ2"
+    ></div>
+    <script defer src="https://cdn.snipcart.com/themes/v3.4.1/default/snipcart.js"></script>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.1/default/snipcart.css" />
+
+    <style>
+      /* CSS-only starfield. Three layers for parallax-like depth. */
+      .oracle-stars {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse at 30% 10%, rgba(76, 29, 149, 0.35), transparent 55%),
+          radial-gradient(ellipse at 80% 80%, rgba(49, 46, 129, 0.32), transparent 60%),
+          #05030f;
+        overflow: hidden;
+      }
+      .oracle-stars__layer {
+        position: absolute;
+        inset: -50%;
+        background-repeat: repeat;
+        background-image:
+          radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.55), transparent 60%),
+          radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.45), transparent 60%),
+          radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.35), transparent 60%),
+          radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,0.4), transparent 60%);
+        background-size: 220px 220px;
+        opacity: 0.55;
+        animation: oracle-stars-drift 240s linear infinite;
+      }
+      .oracle-stars__layer--2 {
+        background-size: 360px 360px;
+        opacity: 0.35;
+        animation-duration: 360s;
+        animation-direction: reverse;
+      }
+      .oracle-stars__layer--3 {
+        background-size: 480px 480px;
+        opacity: 0.22;
+        animation-duration: 540s;
+      }
+      .oracle-stars__veil {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.85) 100%);
+      }
+      @keyframes oracle-stars-drift {
+        from { transform: translate3d(0, 0, 0); }
+        to   { transform: translate3d(-15%, -10%, 0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .oracle-stars__layer { animation: none !important; }
+      }
+    </style>
+  </body>
+</html>

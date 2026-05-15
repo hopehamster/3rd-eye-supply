@@ -1,0 +1,167 @@
+[
+  {
+    "file": "B0GHZRXYCK.txt",
+    "title": "Facebook Ads 2026: How to Run Profitable Meta Ads in a Post-Tracking, AI-Driven World",
+    "author": "J. C. Lewison",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Meta ads strategy covering offer, audiences, copy, and creative in the AI-driven era.",
+    "reason": "Includes copywriting and offer/positioning chapters useful for persuasion and ad copy."
+  },
+  {
+    "file": "B0GHZSRNB2.txt",
+    "title": "A Therapist's Guide to Modern Marketing: Building a Living Ecosystem",
+    "author": "Cynthia Martin, MA",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Marketing ecosystem guide for therapists covering niche, SEO, and relational marketing.",
+    "reason": "Niche/positioning/visibility lessons translate to a small metaphysical practice's marketing voice."
+  },
+  {
+    "file": "B0GJTMK63D.txt",
+    "title": "Ads That Pay You Back: Meta Performance Marketing",
+    "author": "Robert Thomas",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Meta performance marketing tactics covering algorithm, creative, and conversion mistakes.",
+    "reason": "Performance marketing and ad-conversion tactics applicable to e-commerce promotion."
+  },
+  {
+    "file": "B0GKF12DV3.txt",
+    "title": "Product Evidence: The Playbook to Build Winning Products",
+    "author": "John Boyd",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "generic-leadership",
+    "fit_for_oracle": null,
+    "subject_summary": "Product management playbook for evidence-driven product development.",
+    "reason": "Product management methodology, not sales/persuasion or metaphysics."
+  },
+  {
+    "file": "B0GKZBD52X.txt",
+    "title": "unknown",
+    "author": "unknown",
+    "year": "unknown",
+    "decision": "DROP",
+    "category": "corrupt-or-empty",
+    "fit_for_oracle": null,
+    "subject_summary": "File is essentially empty (1 line).",
+    "reason": "Unreadable or under threshold; cannot be classified."
+  },
+  {
+    "file": "B0GM1VK885.txt",
+    "title": "Vibecoding with Claude Code - 101 Things to Know",
+    "author": "Ralph Ehon",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Guide to AI-assisted software development with Claude Code.",
+    "reason": "Software development tooling, unrelated to oracle persuasion or metaphysics."
+  },
+  {
+    "file": "B0GPJ865JP.txt",
+    "title": "Paid Advertising / Meta Ads Manager Guide",
+    "author": "unknown",
+    "year": "unknown",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "low",
+    "subject_summary": "Beginner guide to paid advertising covering audience targeting, ad copy, and visuals.",
+    "reason": "Has ad copy/visual chapters with persuasion utility, though general."
+  },
+  {
+    "file": "B0GPNS72QR.txt",
+    "title": "Mastering AI Video Storytelling for Beginners",
+    "author": "Chris Nichols",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Generative AI video tools, prompts, and cinematic content creation techniques.",
+    "reason": "AI video production tooling, not relevant to metaphysical-shop persuasion oracle."
+  },
+  {
+    "file": "B0GPNT1HK4.txt",
+    "title": "Claude Code for Beginners",
+    "author": "David M. Patel",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Beginner guide to Claude Code for building apps and tools.",
+    "reason": "Software development, unrelated to oracle scope."
+  },
+  {
+    "file": "B0GQVHJRGB.txt",
+    "title": "Master Claude Chat, Cowork and Code: From Prompting to Operational AI",
+    "author": "Sho Shimoda",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Guide to Claude's chat, desktop, and CLI tools for operational AI workflows.",
+    "reason": "AI tooling/development, unrelated to metaphysics or persuasion."
+  },
+  {
+    "file": "B0GQZL989V.txt",
+    "title": "Agentic AI Playbook",
+    "author": "Helena Liu",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Playbook for designing and deploying agentic AI systems in business.",
+    "reason": "AI agent design discipline, not oracle persuasion or metaphysics content."
+  },
+  {
+    "file": "B0GS69CWNT.txt",
+    "title": "The Discipline of Product Marketing",
+    "author": "Elisabeth Thomas",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "marketing-positioning",
+    "fit_for_oracle": "high",
+    "subject_summary": "Product marketing discipline covering positioning, messaging, and launches.",
+    "reason": "Positioning and messaging frameworks directly applicable to crafting oracle product recommendations."
+  },
+  {
+    "file": "B0GS6PXX4S.txt",
+    "title": "Facebook Ads Retargeting Strategy: Turn Visitors Into Paying Customers",
+    "author": "Vikram Wadkar",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "high",
+    "subject_summary": "Retargeting strategy for converting site visitors into customers via Meta ads.",
+    "reason": "Funnels, retargeting psychology, and conversion tactics relevant to e-commerce oracle."
+  },
+  {
+    "file": "B0GS6T186R.txt",
+    "title": "Facebook Ads for Beginners: The Complete Guide to Profitable Campaigns",
+    "author": "Vikram Wadkar",
+    "year": "2026",
+    "decision": "KEEP",
+    "category": "conversion-ecommerce",
+    "fit_for_oracle": "medium",
+    "subject_summary": "Comprehensive guide to Facebook ads for lead gen and ecommerce.",
+    "reason": "Ad creative, funnels, and ecommerce-specific chapters useful for oracle persuasion context."
+  },
+  {
+    "file": "B0GSH5KWJB.txt",
+    "title": "Ship It with Claude Code",
+    "author": "J Cook",
+    "year": "2026",
+    "decision": "DROP",
+    "category": "software-development",
+    "fit_for_oracle": null,
+    "subject_summary": "Guide to building skills, automations, and projects with Claude Code.",
+    "reason": "Software development tooling guide, unrelated to oracle scope."
+  }
+]
